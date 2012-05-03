@@ -9,6 +9,13 @@
             <tb:TaskbarIcon.TrayPopup>
                 <Local:TranslationsPopup></Local:TranslationsPopup>
             </tb:TaskbarIcon.TrayPopup>
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Configure" Click="MenuConfigureClick"/>
+                    <Separator />
+                    <MenuItem Header="Exit" Click="MenuExitClick"/>
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
     </Grid>
 </Window>
