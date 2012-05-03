@@ -11,9 +11,17 @@
             </tb:TaskbarIcon.TrayPopup>
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Configure" Click="MenuConfigureClick"/>
+                    <MenuItem Header="Configure" Click="MenuConfigureClick">
+                        <MenuItem.Icon>
+                            <Image Source="Icons/settings.ico" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <Separator />
-                    <MenuItem Header="Exit" Click="MenuExitClick"/>
+                    <MenuItem Header="Exit" Click="MenuExitClick">
+                        <MenuItem.Icon>
+                            <Image Source="Icons/exit.ico" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>

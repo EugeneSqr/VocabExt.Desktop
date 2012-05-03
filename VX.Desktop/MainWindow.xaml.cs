@@ -36,5 +36,11 @@ namespace VX.Desktop
         {
 
         }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            taskbarIcon.Dispose();
+            base.OnClosing(e);
+        }
     }
 }
