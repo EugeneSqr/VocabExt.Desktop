@@ -7,19 +7,16 @@ namespace VX.Desktop
 {
     public partial class TranslationsPopup
     {
-        private readonly IVocabServiceFacade serviceFacade;
-
         private ITask currentTask;
 
-        public TranslationsPopup(IVocabServiceFacade serviceFacade)
+        public TranslationsPopup()
         {
-            this.serviceFacade = serviceFacade;
             InitializeComponent();
         }
 
         private void UserControlLoaded(object sender, RoutedEventArgs e)
         {
-            currentTask = serviceFacade.GetTask();
+            currentTask = VocabServiceFacade.Instance.GetTask();
             FillTask(currentTask);
         }
 

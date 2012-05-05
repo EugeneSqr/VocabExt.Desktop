@@ -35,7 +35,7 @@ namespace VX.Desktop
 
         private void MenuConfigureClick(object sender, System.Windows.RoutedEventArgs e)
         {
-            AuthServiceFacade facade = new AuthServiceFacade();
+            AuthServiceFacade.Instance.LogOn();
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)

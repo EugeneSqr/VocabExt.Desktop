@@ -3,13 +3,25 @@ using VX.Domain.DataContracts.Interfaces;
 
 namespace VX.Desktop.ServiceFacade
 {
-    public class VocabServiceFacade : IVocabServiceFacade
+    public sealed class VocabServiceFacade : IVocabServiceFacade
     {
-        private readonly IVocabExtService service = new VocabExtServiceClient();
+        private VocabServiceFacade()
+        {
+        }
+
+        static VocabServiceFacade()
+        {
+            Instance = new VocabServiceFacade();
+            ServiceClient = new VocabExtServiceClient();
+        }
+
+        public static IVocabServiceFacade Instance { get; set; }
+
+        private static IVocabExtService ServiceClient { get; set; }
 
         public ITask GetTask()
         {
-            return (ITask)service.GetTask();
+            return (ITask)ServiceClient.GetTask();
         }
     }
 }

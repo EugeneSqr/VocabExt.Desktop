@@ -2,25 +2,40 @@
 
 namespace VX.Desktop.ServiceFacade
 {
-    public class AuthServiceFacade : IAuthServiceFacade
+    public sealed class AuthServiceFacade : IAuthServiceFacade
     {
-        private readonly AuthenticationServiceClient serviceClient;
-
-        public AuthServiceFacade()
+        private AuthServiceFacade()
         {
-            serviceClient = new AuthenticationServiceClient();
         }
+
+        static AuthServiceFacade()
+        {
+            Instance = new AuthServiceFacade();
+            ServiceClient = new AuthenticationServiceClient();
+        }
+
+        public static IAuthServiceFacade Instance { get; set; }
+
+        private static readonly AuthenticationServiceClient ServiceClient;
+
+        private static bool isLoggenOn;
 
         public bool IsLoggedOn()
         {
-            // only for debugg locally
-            var aaa = serviceClient.Login("testuser", "testuser", null, true);
-            return serviceClient.IsLoggedIn();
+            return isLoggenOn;
         }
 
         public bool LogOn()
         {
-            throw new System.NotImplementedException();
+            isLoggenOn = ServiceClient.Login("testuser", "testuser", null, true);
+            return isLoggenOn;
+        }
+
+        public bool LogOut()
+        {
+            ServiceClient.Logout();
+            isLoggenOn = false;
+            return isLoggenOn;
         }
     }
 }

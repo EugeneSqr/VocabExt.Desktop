@@ -5,5 +5,7 @@
         bool IsLoggedOn();
 
         bool LogOn();
+
+        bool LogOut();
     }
 }
