@@ -7,12 +7,13 @@ namespace VX.Desktop
 {
     public partial class TranslationsPopup
     {
-        private readonly IVocabServiceFacade serviceFacade = new VocabServiceFacade();
+        private readonly IVocabServiceFacade serviceFacade;
 
         private ITask currentTask;
 
-        public TranslationsPopup()
+        public TranslationsPopup(IVocabServiceFacade serviceFacade)
         {
+            this.serviceFacade = serviceFacade;
             InitializeComponent();
         }
 

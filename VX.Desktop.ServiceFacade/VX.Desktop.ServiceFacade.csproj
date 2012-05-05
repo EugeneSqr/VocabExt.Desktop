@@ -46,7 +46,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthServiceFacade.cs" />
+    <Compile Include="IAuthServiceFacade.cs" />
     <Compile Include="IVocabServiceFacade.cs" />
+    <Compile Include="Service References\AuthService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\VocabExtService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,6 +63,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\AuthService\AuthenticationService.wsdl" />
+    <None Include="Service References\AuthService\AuthService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthService\AuthService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\VocabExtService\VocabExtService.wsdl" />
     <None Include="Service References\VocabExtService\VocabExtService.xsd">
       <SubType>Designer</SubType>
@@ -74,6 +88,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthService\" />
     <WCFMetadataStorage Include="Service References\VocabExtService\" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +102,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\VocabExtService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\AuthService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

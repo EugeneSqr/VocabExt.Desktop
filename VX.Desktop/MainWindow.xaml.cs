@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Threading;
+using VX.Desktop.ServiceFacade;
 
 namespace VX.Desktop
 {
@@ -34,7 +35,7 @@ namespace VX.Desktop
 
         private void MenuConfigureClick(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            AuthServiceFacade facade = new AuthServiceFacade();
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
