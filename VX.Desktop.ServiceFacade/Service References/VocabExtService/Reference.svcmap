@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://vx.com/VocabExtService/VocabExtService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://vx-service.com/VocabExtService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="VocabExtService.xsd" MetadataType="Schema" ID="1e66df6b-1763-467d-8fb9-29bce148d8da" SourceId="1" SourceUrl="http://vx.com/VocabExtService/VocabExtService.svc?xsd=xsd3" />
-    <MetadataFile FileName="VocabExtService1.xsd" MetadataType="Schema" ID="095edfb2-5194-41d6-9589-d14eee4dcc21" SourceId="1" SourceUrl="http://vx.com/VocabExtService/VocabExtService.svc?xsd=xsd0" />
-    <MetadataFile FileName="VocabExtService2.xsd" MetadataType="Schema" ID="dc1c76a8-839f-47f6-9943-f7d481548e5f" SourceId="1" SourceUrl="http://vx.com/VocabExtService/VocabExtService.svc?xsd=xsd1" />
-    <MetadataFile FileName="VocabExtService.wsdl" MetadataType="Wsdl" ID="b44434bd-5bb0-4ff7-a937-4cfbe3fb2b83" SourceId="1" SourceUrl="http://vx.com/VocabExtService/VocabExtService.svc?wsdl" />
-    <MetadataFile FileName="VocabExtService.disco" MetadataType="Disco" ID="db09498c-e70c-478d-8114-dfbcbe3baac4" SourceId="1" SourceUrl="http://vx.com/VocabExtService/VocabExtService.svc?disco" />
-    <MetadataFile FileName="VocabExtService3.xsd" MetadataType="Schema" ID="799f0b64-77d5-4960-b2c4-5961a5a702a0" SourceId="1" SourceUrl="http://vx.com/VocabExtService/VocabExtService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VocabExtService1.wsdl" MetadataType="Wsdl" ID="bc7c9574-99eb-48a3-a63e-bd4fce62801b" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?wsdl" />
+    <MetadataFile FileName="VocabExtService4.xsd" MetadataType="Schema" ID="13da15ad-e574-437f-ba64-0e1f63bdaffb" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd3" />
+    <MetadataFile FileName="VocabExtService41.xsd" MetadataType="Schema" ID="69a5ae7c-d976-41b6-9217-e734cea1ea73" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VocabExtService42.xsd" MetadataType="Schema" ID="ff03abbb-2ca2-4f88-9b97-dceeaa477371" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VocabExtService43.xsd" MetadataType="Schema" ID="f7112a49-a8a3-4abe-a0a3-78465f12b357" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VocabExtService1.disco" MetadataType="Disco" ID="b70e4dc7-fdba-4854-bada-bbdf246c42a2" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

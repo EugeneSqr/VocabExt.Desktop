@@ -70,17 +70,17 @@
     <None Include="Service References\AuthService\AuthService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService.wsdl" />
-    <None Include="Service References\VocabExtService\VocabExtService.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService1.wsdl" />
+    <None Include="Service References\VocabExtService\VocabExtService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService1.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService2.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService3.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService43.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -90,9 +90,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AuthService\" />
     <WCFMetadataStorage Include="Service References\VocabExtService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\VocabExtService\VocabExtService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\VocabExtService\configuration91.svcinfo" />
@@ -120,6 +117,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VocabExtService\VocabExtService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

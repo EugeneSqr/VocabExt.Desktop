@@ -25,7 +25,7 @@ namespace VX.Desktop
 
         private void Notify(object sender, EventArgs e)
         {
-            taskbarIcon.ShowBalloonTip("VocabExt", "Time to learn English", taskbarIcon.Icon);
+            taskbarIcon.ShowBalloonTip("Vocabulary extender", "Time to learn English", taskbarIcon.Icon);
         }
 
         private void MenuExitClick(object sender, System.Windows.RoutedEventArgs e)
