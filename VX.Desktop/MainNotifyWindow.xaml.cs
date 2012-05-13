@@ -28,8 +28,7 @@ namespace VX.Desktop
             // Create a manager (ExtendedNotifyIcon) for handling interaction with the notification icon and wire up events. 
             extendedNotifyIcon = new ExtendedNotifyIcon();
             extendedNotifyIcon.MouseLeave += extendedNotifyIcon_OnHideWindow;
-            extendedNotifyIcon.MouseLeave += new ExtendedNotifyIcon.MouseLeaveHandler(extendedNotifyIcon_MouseLeave);
-            extendedNotifyIcon.MouseMove += new ExtendedNotifyIcon.MouseMoveHandler(extendedNotifyIcon_MouseMove);
+            extendedNotifyIcon.MouseMove += extendedNotifyIcon_OnMouseMove;
             extendedNotifyIcon.MouseMove += extendedNotifyIcon_OnShowWindow;
             // TODO: localize
             extendedNotifyIcon.targetNotifyIcon.Text = "Popup Text";
@@ -50,10 +49,12 @@ namespace VX.Desktop
             InitTimers();
         }
 
-        void extendedNotifyIcon_MouseMove()
+        private void extendedNotifyIcon_OnMouseMove()
         {
-            AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
-            AutomaticPopupDispatcher.Instance.StartCountForHide();
+            if (AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically)
+            {
+                AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
+            }
         }
 
         private void InitTimers()
@@ -62,12 +63,6 @@ namespace VX.Desktop
             AutomaticPopupDispatcher.Instance.Show += (sender, args) => extendedNotifyIcon_OnShowWindow();
             AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromSeconds(10);
             AutomaticPopupDispatcher.Instance.HideTimer.Interval = TimeSpan.FromSeconds(5);
-            AutomaticPopupDispatcher.Instance.StartCountForShow();
-        }
-
-        void extendedNotifyIcon_MouseLeave()
-        {
-            AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
             AutomaticPopupDispatcher.Instance.StartCountForShow();
         }
 
