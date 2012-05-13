@@ -42,9 +42,9 @@ namespace VX.Desktop
 
             // Locate these storyboards and "cache" them - we only ever want to find these once for performance reasons
             gridFadeOutStoryBoard = (Storyboard)TryFindResource("gridFadeOutStoryBoard");
-            gridFadeOutStoryBoard.Completed += gridFadeOutStoryBoard_Completed;
+            gridFadeOutStoryBoard.Completed += GridFadeOutStoryBoardCompleted;
             gridFadeInStoryBoard = (Storyboard)TryFindResource("gridFadeInStoryBoard");
-            gridFadeInStoryBoard.Completed += gridFadeInStoryBoard_Completed;
+            gridFadeInStoryBoard.Completed += GridFadeInStoryBoardCompleted;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiWindowMainNotification_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void UiWindowMainNotificationMouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             // Cancel the mouse leave event from firing, stop the fade out storyboard from running and enusre the grid is fully visible
             extendedNotifyIcon.StopMouseLeaveEventFromFiring(); 
@@ -134,7 +134,7 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiWindowMainNotification_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        private void UiWindowMainNotificationMouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             extendedNotifyIcon_OnHideWindow();
         }
@@ -144,7 +144,7 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void gridFadeOutStoryBoard_Completed(object sender, EventArgs e)
+        void GridFadeOutStoryBoardCompleted(object sender, EventArgs e)
         {
             Opacity = 0;
             alreadyMoving = false;
@@ -155,7 +155,7 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void gridFadeInStoryBoard_Completed(object sender, EventArgs e)
+        void GridFadeInStoryBoardCompleted(object sender, EventArgs e)
         {
             Opacity = 1;
         }
@@ -165,7 +165,7 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PinButton_Click(object sender, RoutedEventArgs e)
+        private void PinButtonClick(object sender, RoutedEventArgs e)
         {
             PinImage.Source = PinButton.IsChecked == true 
                 ? new BitmapImage(new Uri("pack://application:,,/Images/Pinned.png")) 
@@ -177,7 +177,7 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private void CloseButtonClick(object sender, RoutedEventArgs e)
         {
             extendedNotifyIcon.Dispose();
             Close();
