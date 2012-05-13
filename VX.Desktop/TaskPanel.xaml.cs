@@ -5,19 +5,24 @@ using VX.Domain.DataContracts.Interfaces;
 
 namespace VX.Desktop
 {
-    public partial class TranslationsPopup
+    public partial class TaskPanel
     {
         private ITask currentTask;
 
-        public TranslationsPopup()
+        public TaskPanel()
         {
             InitializeComponent();
         }
 
-        private void UserControlLoaded(object sender, RoutedEventArgs e)
+        public void Refresh()
         {
             currentTask = VocabServiceFacade.Instance.GetTask();
             FillTask(currentTask);
+        }
+
+        private void UserControlLoaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
         }
 
         private void FillTask(ITask task)

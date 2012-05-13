@@ -46,10 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthServiceFacade.cs" />
-    <Compile Include="IAuthServiceFacade.cs" />
+    <Compile Include="IProfileServiceFacade.cs" />
     <Compile Include="IVocabServiceFacade.cs" />
+    <Compile Include="ProfileServiceFacade.cs" />
     <Compile Include="Service References\AuthService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProfileService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -68,6 +73,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AuthService\AuthService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileService\ProfileService.wsdl" />
+    <None Include="Service References\ProfileService\ProfileService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileService\ProfileService1.wsdl" />
+    <None Include="Service References\ProfileService\ProfileService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProfileService\ProfileService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\VocabExtService\VocabExtService1.wsdl" />
@@ -89,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AuthService\" />
+    <WCFMetadataStorage Include="Service References\ProfileService\" />
     <WCFMetadataStorage Include="Service References\VocabExtService\" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +137,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\VocabExtService\VocabExtService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProfileService\ProfileService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProfileService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProfileService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProfileService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

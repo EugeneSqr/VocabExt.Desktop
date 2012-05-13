@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b0abd28-57b1-4ea5-ad1c-d6f5a508b86f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://eskurikhin.domain.corp/ProfileService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProfileService.wsdl" MetadataType="Wsdl" ID="5ca95696-47f8-4f62-b464-d4bed39a2195" SourceId="1" SourceUrl="https://eskurikhin.domain.corp/ProfileService.svc?wsdl" />
+    <MetadataFile FileName="ProfileService.disco" MetadataType="Disco" ID="f9d97474-e9b6-426d-bf5b-7d529cc11e44" SourceId="1" SourceUrl="https://eskurikhin.domain.corp/ProfileService.svc?disco" />
+    <MetadataFile FileName="ProfileService1.wsdl" MetadataType="Wsdl" ID="c9c992a0-edf4-442c-a95f-e3e8ecaf4eeb" SourceId="1" SourceUrl="https://eskurikhin.domain.corp/ProfileService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProfileService.xsd" MetadataType="Schema" ID="3ce23fe5-3754-434b-80c4-64c751af42f6" SourceId="1" SourceUrl="https://eskurikhin.domain.corp/ProfileService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProfileService3.xsd" MetadataType="Schema" ID="0b1398fa-f9c5-4d86-9bcb-29d7d8c9d73d" SourceId="1" SourceUrl="https://eskurikhin.domain.corp/ProfileService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProfileService2.xsd" MetadataType="Schema" ID="0d4f1f70-494e-4039-ba0c-efc844b0a198" SourceId="1" SourceUrl="https://eskurikhin.domain.corp/ProfileService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
