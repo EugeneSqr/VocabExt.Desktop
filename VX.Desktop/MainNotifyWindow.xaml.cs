@@ -17,6 +17,9 @@ namespace VX.Desktop
         private Storyboard gridFadeInStoryBoard;
         private Storyboard gridFadeOutStoryBoard;
 
+        private bool isMouseOn;
+        private const double Epsilon = .0000000001;
+
         /// <summary>
         /// Sets up the popup window and instantiates the notify icon
         /// </summary>
@@ -67,14 +70,21 @@ namespace VX.Desktop
         /// </summary>
         void extendedNotifyIcon_OnShowWindow()
         {
+            if (isMouseOn)
+            {
+                return;
+            }
+
+            isMouseOn = true;
+            
             gridFadeOutStoryBoard.Stop();
-            this.Opacity = 1; // Show the window (backing)
-            this.Topmost = true; // Very rarely, the window seems to get "buried" behind others, this seems to resolve the problem
+            Opacity = 1; // Show the window (backing)
+            Topmost = true; // Very rarely, the window seems to get "buried" behind others, this seems to resolve the problem
             if (uiGridMain.Opacity > 0 && uiGridMain.Opacity < 1) // If its animating, just set it directly to visible (avoids flicker and keeps the UX slick)
             {
                 uiGridMain.Opacity = 1;
             }
-            else if (uiGridMain.Opacity == 0)
+            else if (Math.Abs(uiGridMain.Opacity - 0) < Epsilon)
             {
                 CurrentTask.Refresh();
                 gridFadeInStoryBoard.Begin();  // If it is in a fully hidden state, begin the animation to show the window
@@ -86,17 +96,23 @@ namespace VX.Desktop
         /// </summary>
         void extendedNotifyIcon_OnHideWindow()
         {
+            if (!isMouseOn)
+            {
+                return;
+            }
+            isMouseOn = false;
+            
             if (PinButton.IsChecked == true) return; // Dont hide the window if its pinned open
 
             gridFadeInStoryBoard.Stop(); // Stop the fade in storyboard if running.
 
             // Only start fading out if fully faded in, otherwise you get a flicker effect in the UX because the animation resets the opacity
-            if (uiGridMain.Opacity == 1 && Opacity == 1)
+            if (Math.Abs(uiGridMain.Opacity - 1) < Epsilon && Math.Abs(Opacity - 1) < Epsilon)
                 gridFadeOutStoryBoard.Begin();
             else // Just hide the window and grid
             {
                 uiGridMain.Opacity = 0;
-                this.Opacity = 0;
+                Opacity = 0;
             }
         }
 

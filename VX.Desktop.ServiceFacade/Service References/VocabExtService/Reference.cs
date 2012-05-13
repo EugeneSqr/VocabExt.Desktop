@@ -21,6 +21,13 @@ namespace VX.Desktop.ServiceFacade.VocabExtService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.LanguageContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         object GetTask();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVocabExtService/GetTasks", ReplyAction="http://tempuri.org/IVocabExtService/GetTasksResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.TaskContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.WordContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.LanguageContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetTasks();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -52,6 +59,10 @@ namespace VX.Desktop.ServiceFacade.VocabExtService {
         
         public object GetTask() {
             return base.Channel.GetTask();
+        }
+        
+        public object[] GetTasks() {
+            return base.Channel.GetTasks();
         }
     }
 }

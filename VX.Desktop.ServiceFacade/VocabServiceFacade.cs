@@ -1,4 +1,6 @@
-﻿using VX.Desktop.ServiceFacade.VocabExtService;
+﻿using System.Collections.Generic;
+using System.Linq;
+using VX.Desktop.ServiceFacade.VocabExtService;
 using VX.Domain.DataContracts.Interfaces;
 
 namespace VX.Desktop.ServiceFacade
@@ -22,6 +24,13 @@ namespace VX.Desktop.ServiceFacade
         public ITask GetTask()
         {
             return (ITask)ServiceClient.GetTask();
+        }
+
+        public IList<ITask> GetTasks()
+        {
+            return ServiceClient.GetTasks()
+                .Cast<ITask>()
+                .ToList();
         }
     }
 }

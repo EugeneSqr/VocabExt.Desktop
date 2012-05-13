@@ -103,9 +103,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AnswerStyleSelector.cs" />
+    <Compile Include="DynamicTasksStorage.cs" />
     <Compile Include="HorizontalSeparatorRD.xaml.cs">
       <DependentUpon>HorizontalSeparatorRD.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IDynamicTasksStorage.cs" />
     <Compile Include="MainNotifyWindow.xaml.cs">
       <DependentUpon>MainNotifyWindow.xaml</DependentUpon>
     </Compile>

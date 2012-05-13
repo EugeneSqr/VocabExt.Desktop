@@ -14,16 +14,35 @@
   <wsdl:message name="IVocabExtService_GetTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTaskResponse" />
   </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasks" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksResponse" />
+  </wsdl:message>
   <wsdl:portType name="IVocabExtService">
     <wsdl:operation name="GetTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTask" message="tns:IVocabExtService_GetTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTaskResponse" message="tns:IVocabExtService_GetTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTasks" message="tns:IVocabExtService_GetTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTasksResponse" message="tns:IVocabExtService_GetTasks_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IVocabExtService" type="tns:IVocabExtService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetTask">
       <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetTasks" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

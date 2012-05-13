@@ -2,7 +2,7 @@
 
 namespace VX.Desktop.ServiceFacade
 {
-    public class ProfileServiceFacade : IProfileServiceFacade
+    public sealed class ProfileServiceFacade : IProfileServiceFacade
     {
         private ProfileServiceFacade()
         {

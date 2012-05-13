@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
 using VX.Desktop.ServiceFacade;
+using VX.Domain.DataContracts;
 using VX.Domain.DataContracts.Interfaces;
 
 namespace VX.Desktop
@@ -12,12 +14,28 @@ namespace VX.Desktop
         public TaskPanel()
         {
             InitializeComponent();
+            
+            DynamicTasksStorage.Instance.OutOfItems += Instance_OutOfItems;
+        }
+
+        void Instance_OutOfItems(object sender, System.EventArgs e)
+        {
+            // run waiting animation
+            while (DynamicTasksStorage.Instance.IsReplenishInProgress)
+            {
+                Thread.Sleep(1000);
+            }
+            
+            Refresh();
         }
 
         public void Refresh()
         {
-            currentTask = VocabServiceFacade.Instance.GetTask();
-            FillTask(currentTask);
+            currentTask = DynamicTasksStorage.Instance.RetrieveTask();
+            if (currentTask != null)
+            {
+                FillTask(currentTask);
+            }
         }
 
         private void UserControlLoaded(object sender, RoutedEventArgs e)
