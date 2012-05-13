@@ -28,10 +28,12 @@ namespace VX.Desktop
             // Create a manager (ExtendedNotifyIcon) for handling interaction with the notification icon and wire up events. 
             extendedNotifyIcon = new ExtendedNotifyIcon();
             extendedNotifyIcon.MouseLeave += extendedNotifyIcon_OnHideWindow;
+            extendedNotifyIcon.MouseLeave += new ExtendedNotifyIcon.MouseLeaveHandler(extendedNotifyIcon_MouseLeave);
+            extendedNotifyIcon.MouseMove += new ExtendedNotifyIcon.MouseMoveHandler(extendedNotifyIcon_MouseMove);
             extendedNotifyIcon.MouseMove += extendedNotifyIcon_OnShowWindow;
             // TODO: localize
             extendedNotifyIcon.targetNotifyIcon.Text = "Popup Text";
-            SetNotifyIcon("Red");
+            SetNotifyIcon();
 
             InitializeComponent();
 
@@ -45,15 +47,36 @@ namespace VX.Desktop
             gridFadeOutStoryBoard.Completed += GridFadeOutStoryBoardCompleted;
             gridFadeInStoryBoard = (Storyboard)TryFindResource("gridFadeInStoryBoard");
             gridFadeInStoryBoard.Completed += GridFadeInStoryBoardCompleted;
+            InitTimers();
+        }
+
+        void extendedNotifyIcon_MouseMove()
+        {
+            AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
+            AutomaticPopupDispatcher.Instance.StartCountForHide();
+        }
+
+        private void InitTimers()
+        {
+            AutomaticPopupDispatcher.Instance.Hide += (sender, args) => extendedNotifyIcon_OnHideWindow();
+            AutomaticPopupDispatcher.Instance.Show += (sender, args) => extendedNotifyIcon_OnShowWindow();
+            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromSeconds(10);
+            AutomaticPopupDispatcher.Instance.HideTimer.Interval = TimeSpan.FromSeconds(5);
+            AutomaticPopupDispatcher.Instance.StartCountForShow();
+        }
+
+        void extendedNotifyIcon_MouseLeave()
+        {
+            AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
+            AutomaticPopupDispatcher.Instance.StartCountForShow();
         }
 
         /// <summary>
         /// Pulls an icon from the packed resource and applies it to the NotifyIcon control
         /// </summary>
-        /// <param name="iconPrefix"></param>
-        private void SetNotifyIcon(string iconPrefix)
+        private void SetNotifyIcon()
         {
-            var resourceInfo = Application.GetResourceStream(new Uri("pack://application:,,/Images/" + iconPrefix + "Orb.ico"));
+            var resourceInfo = Application.GetResourceStream(new Uri("pack://application:,,/Icons/tray.ico"));
             if (resourceInfo == null)
                 throw new ArgumentException("Resource not found", "iconPrefix"); // TODO: localize
 
@@ -73,7 +96,7 @@ namespace VX.Desktop
         /// <summary>
         /// When the notification manager requests the popup to be displayed through this event, perform the below actions
         /// </summary>
-        void extendedNotifyIcon_OnShowWindow()
+        private void extendedNotifyIcon_OnShowWindow()
         {
             gridFadeOutStoryBoard.Stop();
             Opacity = 1; // Show the window (backing)
@@ -127,6 +150,7 @@ namespace VX.Desktop
             extendedNotifyIcon.StopMouseLeaveEventFromFiring(); 
             gridFadeOutStoryBoard.Stop(); 
             uiGridMain.Opacity = 1;
+            AutomaticPopupDispatcher.Instance.Stop();
         }
 
         /// <summary>
@@ -137,6 +161,7 @@ namespace VX.Desktop
         private void UiWindowMainNotificationMouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             extendedNotifyIcon_OnHideWindow();
+            AutomaticPopupDispatcher.Instance.StartCountForHide();
         }
  
         /// <summary>

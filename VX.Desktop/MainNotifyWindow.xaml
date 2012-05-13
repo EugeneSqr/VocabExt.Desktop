@@ -62,7 +62,7 @@
                 </Grid.RowDefinitions>
             	<Desktop:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
                 <Desktop:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="5"/>
-                <Label Margin="5,3.395,79,15" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="My Popup Window"/>
+                <Label Margin="5,3.395,79,15" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Vocab Extender"/>
                 <StackPanel Grid.Row="1" Margin="10,10,10,10">
                     <Desktop:TaskPanel x:Name="CurrentTask"></Desktop:TaskPanel>
                 </StackPanel>
