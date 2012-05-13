@@ -11,13 +11,13 @@ using ExtendedWindowsControls;
 
 namespace VX.Desktop
 {
-    public partial class MainNotifyWindow : Window
+    public partial class MainNotifyWindow
     {
-        private ExtendedNotifyIcon extendedNotifyIcon; // global class scope for the icon as it needs to exist foer the lifetime of the window
-        private Storyboard gridFadeInStoryBoard;
-        private Storyboard gridFadeOutStoryBoard;
+        private readonly ExtendedNotifyIcon extendedNotifyIcon; // global class scope for the icon as it needs to exist foer the lifetime of the window
+        private readonly Storyboard gridFadeInStoryBoard;
+        private readonly Storyboard gridFadeOutStoryBoard;
 
-        private bool isMouseOn;
+        private bool alreadyMoving;
         private const double Epsilon = .0000000001;
 
         /// <summary>
@@ -29,6 +29,7 @@ namespace VX.Desktop
             extendedNotifyIcon = new ExtendedNotifyIcon();
             extendedNotifyIcon.MouseLeave += extendedNotifyIcon_OnHideWindow;
             extendedNotifyIcon.MouseMove += extendedNotifyIcon_OnShowWindow;
+            // TODO: localize
             extendedNotifyIcon.targetNotifyIcon.Text = "Popup Text";
             SetNotifyIcon("Red");
 
@@ -36,7 +37,7 @@ namespace VX.Desktop
 
             // Set the startup position and the startup state to "not visible"
             SetWindowToBottomRightOfScreen();
-            this.Opacity = 0;
+            Opacity = 0;
             uiGridMain.Opacity = 0;
 
             // Locate these storyboards and "cache" them - we only ever want to find these once for performance reasons
@@ -52,7 +53,11 @@ namespace VX.Desktop
         /// <param name="iconPrefix"></param>
         private void SetNotifyIcon(string iconPrefix)
         {
-            System.IO.Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,/Images/" + iconPrefix + "Orb.ico")).Stream;
+            var resourceInfo = Application.GetResourceStream(new Uri("pack://application:,,/Images/" + iconPrefix + "Orb.ico"));
+            if (resourceInfo == null)
+                throw new ArgumentException("Resource not found", "iconPrefix"); // TODO: localize
+
+            var iconStream = resourceInfo.Stream;
             extendedNotifyIcon.targetNotifyIcon.Icon = new System.Drawing.Icon(iconStream);
         }
 
@@ -70,13 +75,6 @@ namespace VX.Desktop
         /// </summary>
         void extendedNotifyIcon_OnShowWindow()
         {
-            if (isMouseOn)
-            {
-                return;
-            }
-
-            isMouseOn = true;
-            
             gridFadeOutStoryBoard.Stop();
             Opacity = 1; // Show the window (backing)
             Topmost = true; // Very rarely, the window seems to get "buried" behind others, this seems to resolve the problem
@@ -86,7 +84,12 @@ namespace VX.Desktop
             }
             else if (Math.Abs(uiGridMain.Opacity - 0) < Epsilon)
             {
+                if (alreadyMoving)
+                {
+                    return;
+                }
                 CurrentTask.Refresh();
+                alreadyMoving = true;
                 gridFadeInStoryBoard.Begin();  // If it is in a fully hidden state, begin the animation to show the window
             }
         }
@@ -96,12 +99,6 @@ namespace VX.Desktop
         /// </summary>
         void extendedNotifyIcon_OnHideWindow()
         {
-            if (!isMouseOn)
-            {
-                return;
-            }
-            isMouseOn = false;
-            
             if (PinButton.IsChecked == true) return; // Dont hide the window if its pinned open
 
             gridFadeInStoryBoard.Stop(); // Stop the fade in storyboard if running.
@@ -113,6 +110,7 @@ namespace VX.Desktop
             {
                 uiGridMain.Opacity = 0;
                 Opacity = 0;
+                alreadyMoving = false;
             }
         }
 
@@ -149,6 +147,7 @@ namespace VX.Desktop
         void gridFadeOutStoryBoard_Completed(object sender, EventArgs e)
         {
             Opacity = 0;
+            alreadyMoving = false;
         }
 
         /// <summary>
@@ -168,10 +167,9 @@ namespace VX.Desktop
         /// <param name="e"></param>
         private void PinButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PinButton.IsChecked == true)
-                PinImage.Source = new BitmapImage(new Uri("pack://application:,,/Images/Pinned.png"));
-            else
-                PinImage.Source = new BitmapImage(new Uri("pack://application:,,/Images/Un-Pinned.png"));
+            PinImage.Source = PinButton.IsChecked == true 
+                ? new BitmapImage(new Uri("pack://application:,,/Images/Pinned.png")) 
+                : new BitmapImage(new Uri("pack://application:,,/Images/Un-Pinned.png"));
         }
 
         /// <summary>

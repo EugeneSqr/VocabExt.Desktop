@@ -65,7 +65,6 @@ namespace VX.Desktop
             var asyncDelegate = (Func<IList<ITask>>)asyncResult.AsyncState;
             items.AddRange(asyncDelegate.EndInvoke(asyncResult));
             IsReplenishInProgress = false;
-            /*ItemsReplenished(this, null);*/
         }
     }
 }
