@@ -45,10 +45,10 @@
             		<ColumnDefinition Width="36" />
                     <ColumnDefinition Width="42" />
                 </Grid.ColumnDefinitions>
-                <Desktop:SlickToggleButton CornerRadius="0,0,0,4" x:Name="PinButton" Style="{StaticResource SlickButton}" 
-                                           HighlightBackground="Blue" PressedBackground="DarkBlue" Grid.Column="1" 
-                                           Grid.Row="1" FontWeight="Bold" Click="PinButtonClick">
-                    <Image x:Name="PinImage" Source="pack://application:,,/Images/Un-Pinned.png" Stretch="None"/>
+                <Desktop:SlickToggleButton CornerRadius="0,0,0,4" x:Name="RefreshButton" Style="{StaticResource SlickButton}" 
+                                           HighlightBackground="Blue" Grid.Column="1" 
+                                           Grid.Row="1" FontWeight="Bold" Click="RefreshButtonClick">
+                    <Image x:Name="PinImage" Source="pack://application:,,/Images/refresh.png" Stretch="None"/>
                 </Desktop:SlickToggleButton>
                 <Desktop:SlickToggleButton CornerRadius="0,0,4,0" x:Name="CloseButton" Style="{StaticResource SlickButton}" 
                                            HighlightBackground="Red" Content="X" Click="CloseButtonClick" Grid.Row="1" 

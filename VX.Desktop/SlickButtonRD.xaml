@@ -22,12 +22,6 @@
                     <Setter Property="Opacity" TargetName="ButtonBackgroundBorder" Value="1"></Setter>
                 </Trigger.Setters>
             </Trigger>
-            <Trigger Property="IsChecked" Value="True">
-                <Trigger.Setters>
-                    <Setter Property="Opacity" TargetName="ButtonBackgroundBorder" Value="1"></Setter>
-                    <Setter Property="Background" TargetName="ButtonBackgroundBorder" Value="{Binding Path=PressedBackground, RelativeSource={RelativeSource TemplatedParent}}"></Setter>
-                </Trigger.Setters>
-            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style x:Key="SlickButton" TargetType="{x:Type ToggleButton}">

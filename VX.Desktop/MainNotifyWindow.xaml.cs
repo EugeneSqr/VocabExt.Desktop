@@ -117,8 +117,6 @@ namespace VX.Desktop
         /// </summary>
         void extendedNotifyIcon_OnHideWindow()
         {
-            if (PinButton.IsChecked == true) return; // Dont hide the window if its pinned open
-
             gridFadeInStoryBoard.Stop(); // Stop the fade in storyboard if running.
 
             // Only start fading out if fully faded in, otherwise you get a flicker effect in the UX because the animation resets the opacity
@@ -185,11 +183,9 @@ namespace VX.Desktop
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PinButtonClick(object sender, RoutedEventArgs e)
+        private void RefreshButtonClick(object sender, RoutedEventArgs e)
         {
-            PinImage.Source = PinButton.IsChecked == true 
-                ? new BitmapImage(new Uri("pack://application:,,/Images/Pinned.png")) 
-                : new BitmapImage(new Uri("pack://application:,,/Images/Un-Pinned.png"));
+            CurrentTask.Refresh();
         }
 
         /// <summary>

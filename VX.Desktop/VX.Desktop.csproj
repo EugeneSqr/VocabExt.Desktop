@@ -186,12 +186,7 @@
     <Resource Include="tray.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AmberOrb.ico" />
-    <Resource Include="Images\BlueOrb.ico" />
-    <Resource Include="Images\GreenOrb.ico" />
-    <Resource Include="Images\Pinned.png" />
-    <Resource Include="Images\RedOrb.ico" />
-    <Resource Include="Images\Un-Pinned.png" />
+    <Resource Include="Images\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
