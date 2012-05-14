@@ -6,8 +6,10 @@
 using System;
 using System.Windows;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 using ExtendedWindowsControls;
+using VX.Desktop.Controls;
+using VX.Desktop.Controls.LoadingControl;
+using VX.Desktop.Infrastructure;
 
 namespace VX.Desktop
 {
@@ -16,6 +18,9 @@ namespace VX.Desktop
         private readonly ExtendedNotifyIcon extendedNotifyIcon; // global class scope for the icon as it needs to exist foer the lifetime of the window
         private readonly Storyboard gridFadeInStoryBoard;
         private readonly Storyboard gridFadeOutStoryBoard;
+
+        private readonly TaskPanel currentTask;
+        private readonly LoadingAnimation loadingAnimation;
 
         private bool alreadyMoving;
         private const double Epsilon = .0000000001;
@@ -31,7 +36,7 @@ namespace VX.Desktop
             extendedNotifyIcon.MouseMove += extendedNotifyIcon_OnMouseMove;
             extendedNotifyIcon.MouseMove += extendedNotifyIcon_OnShowWindow;
             // TODO: localize
-            extendedNotifyIcon.targetNotifyIcon.Text = "Popup Text";
+            extendedNotifyIcon.targetNotifyIcon.Text = "Vocabulary Extender";
             SetNotifyIcon();
 
             InitializeComponent();
@@ -47,23 +52,9 @@ namespace VX.Desktop
             gridFadeInStoryBoard = (Storyboard)TryFindResource("gridFadeInStoryBoard");
             gridFadeInStoryBoard.Completed += GridFadeInStoryBoardCompleted;
             InitTimers();
-        }
 
-        private void extendedNotifyIcon_OnMouseMove()
-        {
-            if (AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically)
-            {
-                AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
-            }
-        }
-
-        private void InitTimers()
-        {
-            AutomaticPopupDispatcher.Instance.Hide += (sender, args) => extendedNotifyIcon_OnHideWindow();
-            AutomaticPopupDispatcher.Instance.Show += (sender, args) => extendedNotifyIcon_OnShowWindow();
-            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromSeconds(10);
-            AutomaticPopupDispatcher.Instance.HideTimer.Interval = TimeSpan.FromSeconds(5);
-            AutomaticPopupDispatcher.Instance.StartCountForShow();
+            currentTask = new TaskPanel();
+            loadingAnimation = new LoadingAnimation();
         }
 
         /// <summary>
@@ -106,7 +97,8 @@ namespace VX.Desktop
                 {
                     return;
                 }
-                CurrentTask.Refresh();
+
+                HandleLoadingDelay();   
                 alreadyMoving = true;
                 gridFadeInStoryBoard.Begin();  // If it is in a fully hidden state, begin the animation to show the window
             }
@@ -156,7 +148,7 @@ namespace VX.Desktop
             extendedNotifyIcon_OnHideWindow();
             AutomaticPopupDispatcher.Instance.StartCountForHide();
         }
- 
+
         /// <summary>
         /// Once the grid fades out, set the backing window to "not visible"
         /// </summary>
@@ -185,7 +177,7 @@ namespace VX.Desktop
         /// <param name="e"></param>
         private void RefreshButtonClick(object sender, RoutedEventArgs e)
         {
-            CurrentTask.Refresh();
+            currentTask.Refresh();
         }
 
         /// <summary>
@@ -197,6 +189,37 @@ namespace VX.Desktop
         {
             extendedNotifyIcon.Dispose();
             Close();
+        }
+
+        private void InitTimers()
+        {
+            AutomaticPopupDispatcher.Instance.Hide += (sender, args) => extendedNotifyIcon_OnHideWindow();
+            AutomaticPopupDispatcher.Instance.Show += (sender, args) => extendedNotifyIcon_OnShowWindow();
+            // todo : to config
+            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromSeconds(10);
+            AutomaticPopupDispatcher.Instance.HideTimer.Interval = TimeSpan.FromSeconds(5);
+            AutomaticPopupDispatcher.Instance.StartCountForShow();
+        }
+
+        private void extendedNotifyIcon_OnMouseMove()
+        {
+            if (AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically)
+            {
+                AutomaticPopupDispatcher.Instance.IsTriggeredAutomatically = false;
+            }
+        }
+
+        private void HandleLoadingDelay()
+        {
+            MainContent.Children.Clear();
+            if (currentTask.Refresh())
+            {
+                MainContent.Children.Add(currentTask);
+            }
+            else
+            {
+                MainContent.Children.Add(loadingAnimation);
+            }
         }
     }
 }

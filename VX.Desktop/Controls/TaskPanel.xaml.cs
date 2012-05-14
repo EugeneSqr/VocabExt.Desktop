@@ -1,11 +1,9 @@
-﻿using System.Threading;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using VX.Desktop.ServiceFacade;
-using VX.Domain.DataContracts;
+using VX.Desktop.Infrastructure;
 using VX.Domain.DataContracts.Interfaces;
 
-namespace VX.Desktop
+namespace VX.Desktop.Controls
 {
     public partial class TaskPanel
     {
@@ -14,28 +12,22 @@ namespace VX.Desktop
         public TaskPanel()
         {
             InitializeComponent();
-            
-            DynamicTasksStorage.Instance.OutOfItems += Instance_OutOfItems;
         }
 
-        void Instance_OutOfItems(object sender, System.EventArgs e)
+        public bool Refresh()
         {
-            // run waiting animation
-            while (DynamicTasksStorage.Instance.IsReplenishInProgress)
+            if (!DynamicTasksStorage.Instance.IsReplenishInProgress)
             {
-                Thread.Sleep(1000);
+                currentTask = DynamicTasksStorage.Instance.RetrieveTask();
             }
-            
-            Refresh();
-        }
 
-        public void Refresh()
-        {
-            currentTask = DynamicTasksStorage.Instance.RetrieveTask();
             if (currentTask != null)
             {
                 FillTask(currentTask);
+                return true;
             }
+
+            return false;
         }
 
         private void UserControlLoaded(object sender, RoutedEventArgs e)

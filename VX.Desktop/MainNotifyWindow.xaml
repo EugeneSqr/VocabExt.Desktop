@@ -20,7 +20,7 @@
     BorderThickness="1" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:PopupHostControl="clr-namespace:VX.Desktop.Controls.PopupHostControl" mc:Ignorable="d">
     <Window.Resources>       
         <Storyboard x:Key="gridFadeInStoryBoard">
             <DoubleAnimation Storyboard.TargetName="uiGridMain" BeginTime="0:0:0.1"
@@ -45,12 +45,12 @@
             		<ColumnDefinition Width="36" />
                     <ColumnDefinition Width="42" />
                 </Grid.ColumnDefinitions>
-                <Desktop:SlickToggleButton CornerRadius="0,0,0,4" x:Name="RefreshButton" Style="{StaticResource SlickButton}" 
+                <PopupHostControl:SlickToggleButton CornerRadius="0,0,0,4" x:Name="RefreshButton" Style="{StaticResource SlickButton}" 
                                            HighlightBackground="Blue" Grid.Column="1" 
                                            Grid.Row="1" FontWeight="Bold" Click="RefreshButtonClick">
                     <Image x:Name="PinImage" Source="pack://application:,,/Images/refresh.png" Stretch="None"/>
-                </Desktop:SlickToggleButton>
-                <Desktop:SlickToggleButton CornerRadius="0,0,4,0" x:Name="CloseButton" Style="{StaticResource SlickButton}" 
+                </PopupHostControl:SlickToggleButton>
+                <PopupHostControl:SlickToggleButton CornerRadius="0,0,4,0" x:Name="CloseButton" Style="{StaticResource SlickButton}" 
                                            HighlightBackground="Red" Content="X" Click="CloseButtonClick" Grid.Row="1" 
                                            FontWeight="Bold" Foreground="#FFFFFFFF" Grid.Column="2" />
             </Grid>
@@ -60,11 +60,11 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="44"/>
                 </Grid.RowDefinitions>
-            	<Desktop:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
-                <Desktop:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="5"/>
+            	<PopupHostControl:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
+                <PopupHostControl:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="5"/>
                 <Label Margin="5,3.395,79,15" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Vocab Extender"/>
-                <StackPanel Grid.Row="1" Margin="10,10,10,10">
-                    <Desktop:TaskPanel x:Name="CurrentTask"></Desktop:TaskPanel>
+                <StackPanel x:Name="MainContent" Grid.Row="1" Margin="10,10,10,10">
+                    <!--<Desktop:TaskPanel x:Name="CurrentTask"></Desktop:TaskPanel>-->
                 </StackPanel>
                 <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" Margin="5,5,5,5" Grid.Row="2">
                     <Button HorizontalAlignment="Center" Style="{StaticResource StealthButton}" Width="67">ButtonA</Button>

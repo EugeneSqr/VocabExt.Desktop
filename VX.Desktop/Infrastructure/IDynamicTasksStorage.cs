@@ -1,13 +1,11 @@
 ﻿using System;
 using VX.Domain.DataContracts.Interfaces;
 
-namespace VX.Desktop
+namespace VX.Desktop.Infrastructure
 {
     public interface IDynamicTasksStorage
     {
         event EventHandler RunningLowOfItems;
-
-        event EventHandler OutOfItems;
 
         bool IsReplenishInProgress { get; }
 

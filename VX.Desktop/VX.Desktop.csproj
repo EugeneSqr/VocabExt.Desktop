@@ -102,26 +102,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AnswerStyleSelector.cs" />
-    <Compile Include="AutomaticPopupDispatcher.cs" />
-    <Compile Include="DynamicTasksStorage.cs" />
-    <Compile Include="HorizontalSeparatorRD.xaml.cs">
+    <Compile Include="Infrastructure\AnswerStyleSelector.cs" />
+    <Compile Include="Infrastructure\AutomaticPopupDispatcher.cs" />
+    <Compile Include="Infrastructure\DynamicTasksStorage.cs" />
+    <Compile Include="Controls\PopupHostControl\HorizontalSeparatorRD.xaml.cs">
       <DependentUpon>HorizontalSeparatorRD.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IAutomaticPopupDispatcher.cs" />
-    <Compile Include="IDynamicTasksStorage.cs" />
+    <Compile Include="Infrastructure\IAutomaticPopupDispatcher.cs" />
+    <Compile Include="Infrastructure\IDynamicTasksStorage.cs" />
+    <Compile Include="Controls\LoadingControl\Block.xaml.cs">
+      <DependentUpon>Block.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadingControl\LoadingAnimation.xaml.cs">
+      <DependentUpon>LoadingAnimation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainNotifyWindow.xaml.cs">
       <DependentUpon>MainNotifyWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SlickButtonControl.cs" />
-    <Compile Include="TaskPanel.xaml.cs">
+    <Compile Include="Controls\PopupHostControl\SlickButtonControl.cs" />
+    <Compile Include="Controls\TaskPanel.xaml.cs">
       <DependentUpon>TaskPanel.xaml</DependentUpon>
     </Compile>
-    <Page Include="HorizontalSeparatorRD.xaml">
+    <Page Include="Controls\PopupHostControl\HorizontalSeparatorRD.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainGridStyleRD.xaml">
+    <Page Include="Controls\LoadingControl\Block.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LoadingControl\LoadingAnimation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PopupHostControl\MainGridStyleRD.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -129,15 +143,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SlickButtonRD.xaml">
+    <Page Include="Controls\PopupHostControl\SlickButtonRD.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="StealthButtonRD.xaml">
+    <Page Include="Controls\PopupHostControl\StealthButtonRD.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TaskPanel.xaml">
+    <Page Include="Controls\TaskPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

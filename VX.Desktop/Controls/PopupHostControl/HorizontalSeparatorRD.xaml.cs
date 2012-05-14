@@ -1,4 +1,4 @@
-﻿namespace VX.Desktop
+﻿namespace VX.Desktop.Controls.PopupHostControl
 {
 	public partial class HorizontalSeparator
 	{

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using VX.Domain.DataContracts.Interfaces;
 
-namespace VX.Desktop
+namespace VX.Desktop.Infrastructure
 {
     public class AnswerStyleSelector : StyleSelector
     {

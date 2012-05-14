@@ -3,9 +3,9 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="SlickButtonRD.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="MainGridStyleRD.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="StealthButtonRD.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Controls\PopupHostControl\SlickButtonRD.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Controls\PopupHostControl\MainGridStyleRD.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Controls\PopupHostControl\StealthButtonRD.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

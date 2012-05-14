@@ -4,7 +4,7 @@ using System.Linq;
 using VX.Desktop.ServiceFacade;
 using VX.Domain.DataContracts.Interfaces;
 
-namespace VX.Desktop
+namespace VX.Desktop.Infrastructure
 {
     public sealed class DynamicTasksStorage : IDynamicTasksStorage
     {
@@ -12,14 +12,11 @@ namespace VX.Desktop
         private const int EmptyStorageTasksCount = 0;
 
         public event EventHandler RunningLowOfItems;
-
-        public event EventHandler OutOfItems;
         
         private DynamicTasksStorage()
         {
             items = new List<ITask>();
             RunningLowOfItems += ReplenishItemsAsync;
-            OutOfItems += ReplenishItemsAsync;
         }
 
         static DynamicTasksStorage()
@@ -37,7 +34,7 @@ namespace VX.Desktop
         {
             if (items.Count <= EmptyStorageTasksCount)
             {
-                OutOfItems(this, null);
+                ReplenishItemsAsync(null, null);
                 return null;
             }
 

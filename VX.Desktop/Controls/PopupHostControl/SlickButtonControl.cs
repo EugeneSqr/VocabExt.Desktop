@@ -8,7 +8,7 @@
 
 using System.Windows.Controls.Primitives;
 
-namespace VX.Desktop
+namespace VX.Desktop.Controls.PopupHostControl
 {
     public class SlickToggleButton : ToggleButton
     {

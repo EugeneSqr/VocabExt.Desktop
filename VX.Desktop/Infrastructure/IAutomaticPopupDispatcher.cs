@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Threading;
 
-namespace VX.Desktop
+namespace VX.Desktop.Infrastructure
 {
     public interface IAutomaticPopupDispatcher
     {
