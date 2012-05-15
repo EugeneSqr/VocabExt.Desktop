@@ -120,9 +120,17 @@
       <DependentUpon>MainNotifyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PopupHostControl\SlickButtonControl.cs" />
-    <Compile Include="Controls\TaskPanel.xaml.cs">
+    <Compile Include="Controls\TaskPanelControl\TaskPanel.xaml.cs">
       <DependentUpon>TaskPanel.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\TaskPanelControl\Answer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TaskPanelControl\CorrectAnswer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PopupHostControl\HorizontalSeparatorRD.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -139,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\TaskPanelControl\WrongAnswer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainNotifyWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -147,11 +159,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\PopupHostControl\StealthButtonRD.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\TaskPanel.xaml">
+    <Page Include="Controls\TaskPanelControl\TaskPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using VX.Desktop.Infrastructure;
 using VX.Domain.DataContracts.Interfaces;
 
-namespace VX.Desktop.Controls
+namespace VX.Desktop.Controls.TaskPanelControl
 {
     public partial class TaskPanel
     {

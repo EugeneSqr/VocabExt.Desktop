@@ -3,7 +3,7 @@
 // Comments: Button Control Template for buttons that would typically be placed in the "control box area" of a window (close buttons, minimize buttons, pin buttons etc)
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Desktop="clr-namespace:VX.Desktop"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:PopupHostControl="clr-namespace:VX.Desktop.Controls.PopupHostControl">
     <ControlTemplate x:Key="SlickButtonTemplate" TargetType="{x:Type PopupHostControl:SlickToggleButton}">
         <Grid>

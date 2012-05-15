@@ -7,8 +7,8 @@ using System;
 using System.Windows;
 using System.Windows.Media.Animation;
 using ExtendedWindowsControls;
-using VX.Desktop.Controls;
 using VX.Desktop.Controls.LoadingControl;
+using VX.Desktop.Controls.TaskPanelControl;
 using VX.Desktop.Infrastructure;
 
 namespace VX.Desktop
@@ -187,8 +187,7 @@ namespace VX.Desktop
         /// <param name="e"></param>
         private void CloseButtonClick(object sender, RoutedEventArgs e)
         {
-            extendedNotifyIcon.Dispose();
-            Close();
+            extendedNotifyIcon_OnHideWindow();
         }
 
         private void InitTimers()
@@ -196,7 +195,7 @@ namespace VX.Desktop
             AutomaticPopupDispatcher.Instance.Hide += (sender, args) => extendedNotifyIcon_OnHideWindow();
             AutomaticPopupDispatcher.Instance.Show += (sender, args) => extendedNotifyIcon_OnShowWindow();
             // todo : to config
-            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromSeconds(10);
+            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromMinutes(10);
             AutomaticPopupDispatcher.Instance.HideTimer.Interval = TimeSpan.FromSeconds(5);
             AutomaticPopupDispatcher.Instance.StartCountForShow();
         }
