@@ -187,7 +187,8 @@ namespace VX.Desktop
         /// <param name="e"></param>
         private void CloseButtonClick(object sender, RoutedEventArgs e)
         {
-            extendedNotifyIcon_OnHideWindow();
+            extendedNotifyIcon.Dispose();
+            Close();
         }
 
         private void InitTimers()
