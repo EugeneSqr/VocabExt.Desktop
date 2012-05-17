@@ -14,20 +14,40 @@
   <wsdl:message name="IVocabExtService_GetTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTaskResponse" />
   </wsdl:message>
-  <wsdl:message name="IVocabExtService_GetTasks_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTasks" />
+  <wsdl:message name="IVocabExtService_GetTasksAllVocabBanks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksAllVocabBanks" />
   </wsdl:message>
-  <wsdl:message name="IVocabExtService_GetTasks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTasksResponse" />
+  <wsdl:message name="IVocabExtService_GetTasksAllVocabBanks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksAllVocabBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetTasksSpecifiedVocabBanks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksSpecifiedVocabBanks" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetTasksSpecifiedVocabBanks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksSpecifiedVocabBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetVocabBanksList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVocabBanksList" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetVocabBanksList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVocabBanksListResponse" />
   </wsdl:message>
   <wsdl:portType name="IVocabExtService">
     <wsdl:operation name="GetTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTask" message="tns:IVocabExtService_GetTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTaskResponse" message="tns:IVocabExtService_GetTask_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetTasks">
-      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTasks" message="tns:IVocabExtService_GetTasks_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTasksResponse" message="tns:IVocabExtService_GetTasks_OutputMessage" />
+    <wsdl:operation name="GetTasksAllVocabBanks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTasksAllVocabBanks" message="tns:IVocabExtService_GetTasksAllVocabBanks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTasksAllVocabBanksResponse" message="tns:IVocabExtService_GetTasksAllVocabBanks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksSpecifiedVocabBanks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTasksSpecifiedVocabBanks" message="tns:IVocabExtService_GetTasksSpecifiedVocabBanks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTasksSpecifiedVocabBanksResponse" message="tns:IVocabExtService_GetTasksSpecifiedVocabBanks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVocabBanksList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetVocabBanksList" message="tns:IVocabExtService_GetVocabBanksList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetVocabBanksListResponse" message="tns:IVocabExtService_GetVocabBanksList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IVocabExtService" type="tns:IVocabExtService">
@@ -41,8 +61,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetTasks">
-      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetTasks" style="document" />
+    <wsdl:operation name="GetTasksAllVocabBanks">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetTasksAllVocabBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksSpecifiedVocabBanks">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetTasksSpecifiedVocabBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVocabBanksList">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetVocabBanksList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

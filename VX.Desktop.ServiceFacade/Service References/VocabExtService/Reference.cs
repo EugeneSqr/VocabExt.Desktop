@@ -20,14 +20,32 @@ namespace VX.Desktop.ServiceFacade.VocabExtService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.WordContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.LanguageContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
         object GetTask();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVocabExtService/GetTasks", ReplyAction="http://tempuri.org/IVocabExtService/GetTasksResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVocabExtService/GetTasksAllVocabBanks", ReplyAction="http://tempuri.org/IVocabExtService/GetTasksAllVocabBanksResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.TaskContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.WordContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.LanguageContract))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        object[] GetTasks();
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        object[] GetTasksAllVocabBanks();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVocabExtService/GetTasksSpecifiedVocabBanks", ReplyAction="http://tempuri.org/IVocabExtService/GetTasksSpecifiedVocabBanksResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.TaskContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.WordContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.LanguageContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        object[] GetTasksSpecifiedVocabBanks(int[] vocabBanksIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVocabExtService/GetVocabBanksList", ReplyAction="http://tempuri.org/IVocabExtService/GetVocabBanksListResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.TaskContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.WordContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VX.Domain.DataContracts.LanguageContract))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(int[]))]
+        object[] GetVocabBanksList();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,8 +79,16 @@ namespace VX.Desktop.ServiceFacade.VocabExtService {
             return base.Channel.GetTask();
         }
         
-        public object[] GetTasks() {
-            return base.Channel.GetTasks();
+        public object[] GetTasksAllVocabBanks() {
+            return base.Channel.GetTasksAllVocabBanks();
+        }
+        
+        public object[] GetTasksSpecifiedVocabBanks(int[] vocabBanksIds) {
+            return base.Channel.GetTasksSpecifiedVocabBanks(vocabBanksIds);
+        }
+        
+        public object[] GetVocabBanksList() {
+            return base.Channel.GetVocabBanksList();
         }
     }
 }

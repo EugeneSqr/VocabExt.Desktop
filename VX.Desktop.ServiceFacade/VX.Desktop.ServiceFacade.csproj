@@ -46,15 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IProfileServiceFacade.cs" />
+    <Compile Include="IMembershipServiceFacade.cs" />
     <Compile Include="IVocabServiceFacade.cs" />
-    <Compile Include="ProfileServiceFacade.cs" />
-    <Compile Include="Service References\AuthService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\ProfileService\Reference.cs">
+    <Compile Include="MembershipServiceFacade.cs" />
+    <Compile Include="Service References\AccountMembershipService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -68,23 +63,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AuthService\AuthenticationService.wsdl" />
-    <None Include="Service References\AuthService\AuthService.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService.wsdl" />
+    <None Include="Service References\AccountMembershipService\AccountMembershipService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AuthService\AuthService1.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService1.wsdl" />
+    <None Include="Service References\AccountMembershipService\AccountMembershipService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ProfileService\ProfileService.wsdl" />
-    <None Include="Service References\ProfileService\ProfileService.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ProfileService\ProfileService1.wsdl" />
-    <None Include="Service References\ProfileService\ProfileService2.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ProfileService\ProfileService3.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\AccountMembershipService\VX.Desktop.ServiceFacade.AccountMembershipService.MembershipCreateStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\VocabExtService\VocabExtService1.wsdl" />
     <None Include="Service References\VocabExtService\VocabExtService4.xsd">
@@ -104,8 +98,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\AuthService\" />
-    <WCFMetadataStorage Include="Service References\ProfileService\" />
+    <WCFMetadataStorage Include="Service References\AccountMembershipService\" />
     <WCFMetadataStorage Include="Service References\VocabExtService\" />
   </ItemGroup>
   <ItemGroup>
@@ -121,34 +114,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AuthService\AuthService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AuthService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AuthService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AuthService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\VocabExtService\VocabExtService1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProfileService\ProfileService.disco" />
+    <None Include="Service References\AccountMembershipService\AccountMembershipService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProfileService\configuration91.svcinfo" />
+    <None Include="Service References\AccountMembershipService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProfileService\configuration.svcinfo" />
+    <None Include="Service References\AccountMembershipService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProfileService\Reference.svcmap">
+    <None Include="Service References\AccountMembershipService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

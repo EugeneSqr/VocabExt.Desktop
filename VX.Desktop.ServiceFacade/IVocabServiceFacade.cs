@@ -7,6 +7,6 @@ namespace VX.Desktop.ServiceFacade
     {
         ITask GetTask();
 
-        IList<ITask> GetTasks();
+        IList<ITask> GetTasks(string username, string password);
     }
 }

@@ -52,14 +52,17 @@ namespace VX.Desktop.Infrastructure
 
         private void ReplenishItemsAsync(object sender, EventArgs args)
         {
-            Func<IList<ITask>> asyncDelegate = VocabServiceFacade.Instance.GetTasks;
+            GetTasksDelegate asyncDelegate = VocabServiceFacade.Instance.GetTasks;
             IsReplenishInProgress = true;
-            asyncDelegate.BeginInvoke(CallbackMethod, asyncDelegate);
+            asyncDelegate.BeginInvoke(CredentialsProvider.Instance.User, CredentialsProvider.Instance.Password,
+                CallbackMethod, asyncDelegate);
         }
+
+        private delegate IList<ITask> GetTasksDelegate(string username, string password);
 
         void CallbackMethod(IAsyncResult asyncResult)
         {
-            var asyncDelegate = (Func<IList<ITask>>)asyncResult.AsyncState;
+            var asyncDelegate = (GetTasksDelegate)asyncResult.AsyncState;
             items.AddRange(asyncDelegate.EndInvoke(asyncResult));
             IsReplenishInProgress = false;
         }

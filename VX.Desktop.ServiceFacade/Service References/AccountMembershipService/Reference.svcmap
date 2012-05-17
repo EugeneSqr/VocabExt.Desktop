@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0e668edc-8e7d-474d-a8d1-c1967f12b566" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vx.com/AccountMembershipService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AccountMembershipService.disco" MetadataType="Disco" ID="fff3dbb7-b9c5-414c-897c-30567c53f659" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?disco" />
+    <MetadataFile FileName="AccountMembershipService.wsdl" MetadataType="Wsdl" ID="8bc758da-42f9-4c3e-90fb-7d7535393b5f" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="AccountMembershipService.xsd" MetadataType="Schema" ID="7d219ce6-1042-4871-84aa-7b6c7cfd674a" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AccountMembershipService1.xsd" MetadataType="Schema" ID="eda4c618-15a1-43bf-bea6-60ddb92a4845" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccountMembershipService2.xsd" MetadataType="Schema" ID="91bbe47b-40ea-4a38-a470-0c78c9818f07" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccountMembershipService1.wsdl" MetadataType="Wsdl" ID="c739defe-e28e-4ba0-b1db-05caf0619d54" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?wsdl" />
+    <MetadataFile FileName="AccountMembershipService3.xsd" MetadataType="Schema" ID="b77eecab-dc77-4208-9851-8865f90e8d92" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
