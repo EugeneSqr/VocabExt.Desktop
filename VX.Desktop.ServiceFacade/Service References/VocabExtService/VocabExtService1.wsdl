@@ -91,7 +91,7 @@
   </wsdl:binding>
   <wsdl:service name="VocabExtService">
     <wsdl:port name="BasicHttpBinding_IVocabExtService" binding="tns:BasicHttpBinding_IVocabExtService">
-      <soap:address location="http://vx-service.com/VocabExtService.svc" />
+      <soap:address location="http://vx-service.com/VocabExtService.svc/soapService" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
