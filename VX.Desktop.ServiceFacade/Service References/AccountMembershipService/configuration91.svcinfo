@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Aye/YdqU8xU4UKc8BzM6VpVxfUY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="WxbP0OzUNpjcmNLKWeHtGqc7nDQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IMembershipService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IMembershipService" contract="AccountMembershipService.IMembershipService" bindingType="basicHttpBinding" address="http://vx.com/AccountMembershipService.svc" bindingConfiguration="BasicHttpBinding_IMembershipService">
+    <endpoint name="BasicHttpBinding_IMembershipService" contract="AccountMembershipService.IMembershipService" bindingType="basicHttpBinding" address="http://vx.com/AccountMembershipService.svc/soapService" bindingConfiguration="BasicHttpBinding_IMembershipService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://vx.com/AccountMembershipService.svc</serializedValue>
+          <serializedValue>http://vx.com/AccountMembershipService.svc/soapService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

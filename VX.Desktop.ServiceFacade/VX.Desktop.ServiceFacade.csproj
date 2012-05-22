@@ -63,8 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Service References\AccountMembershipService\AccountMembershipService.wsdl" />
     <None Include="Service References\AccountMembershipService\AccountMembershipService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -76,6 +74,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AccountMembershipService\AccountMembershipService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AccountMembershipService\AccountMembershipService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AccountMembershipService\VX.Desktop.ServiceFacade.AccountMembershipService.MembershipCreateStatus.datasource">

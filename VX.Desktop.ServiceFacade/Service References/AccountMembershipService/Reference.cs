@@ -71,6 +71,12 @@ namespace VX.Desktop.ServiceFacade.AccountMembershipService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipService/GetVocabBanks", ReplyAction="http://tempuri.org/IMembershipService/GetVocabBanksResponse")]
         int[] GetVocabBanks(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipService/GetVocabBanksCurrentUser", ReplyAction="http://tempuri.org/IMembershipService/GetVocabBanksCurrentUserResponse")]
+        int[] GetVocabBanksCurrentUser();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMembershipService/PostVocabBanks", ReplyAction="http://tempuri.org/IMembershipService/PostVocabBanksResponse")]
+        bool PostVocabBanks(System.IO.Stream data);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,6 +124,14 @@ namespace VX.Desktop.ServiceFacade.AccountMembershipService {
         
         public int[] GetVocabBanks(string username, string password) {
             return base.Channel.GetVocabBanks(username, password);
+        }
+        
+        public int[] GetVocabBanksCurrentUser() {
+            return base.Channel.GetVocabBanksCurrentUser();
+        }
+        
+        public bool PostVocabBanks(System.IO.Stream data) {
+            return base.Channel.PostVocabBanks(data);
         }
     }
 }
