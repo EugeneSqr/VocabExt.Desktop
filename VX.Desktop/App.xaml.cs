@@ -1,4 +1,5 @@
 ﻿using VX.Desktop.Infrastructure;
+using VX.Desktop.ServiceFacade;
 
 namespace VX.Desktop
 {
@@ -7,8 +8,8 @@ namespace VX.Desktop
         public App()
         {
             InitializeComponent();
-            Current.Properties[CredentialsProvider.Instance.UserKey] = "Femel";
-            Current.Properties[CredentialsProvider.Instance.PasswordKey] = "femel1";
+            CredentialsProvider.Instance.CurrentToken = 
+                AuthServiceFacade.Instance.Login("Femel", "femel1");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace VX.Desktop.Infrastructure
 {
@@ -15,24 +16,16 @@ namespace VX.Desktop.Infrastructure
 
         public static ICredentialsProvider Instance { get; set; }
 
-        public string UserKey
+        public Guid CurrentToken
         {
-            get { return "user"; }
-        }
-
-        public string PasswordKey
-        {
-            get { return "pass"; }
-        }
-
-        public string User
-        {
-            get { return (string)Application.Current.Properties[UserKey]; }
-        }
-
-        public string Password
-        {
-            get { return (string)Application.Current.Properties[PasswordKey]; }
+            get
+            {
+                return (Guid)Application.Current.Properties["Token"];
+            }
+            set
+            {
+                Application.Current.Properties["Token"] = value;
+            }
         }
     }
 }

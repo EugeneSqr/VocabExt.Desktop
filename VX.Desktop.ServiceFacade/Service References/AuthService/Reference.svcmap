@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a0a184e5-6210-4daf-8a1a-1523a210a161" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vx.com/AuthService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AuthService.wsdl" MetadataType="Wsdl" ID="33e33d66-8d92-41ec-a5b2-3929400c6a05" SourceId="1" SourceUrl="http://vx.com/AuthService.svc?wsdl" />
+    <MetadataFile FileName="AuthService.disco" MetadataType="Disco" ID="0180c10a-b655-43b0-be46-06b4133ec076" SourceId="1" SourceUrl="http://vx.com/AuthService.svc?disco" />
+    <MetadataFile FileName="AuthService.xsd" MetadataType="Schema" ID="194f65ba-6073-45d0-a6de-c35427580cf6" SourceId="1" SourceUrl="http://vx.com/AuthService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AuthService1.xsd" MetadataType="Schema" ID="add0d418-5751-49f0-9115-0e3e9fc60d5d" SourceId="1" SourceUrl="http://vx.com/AuthService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

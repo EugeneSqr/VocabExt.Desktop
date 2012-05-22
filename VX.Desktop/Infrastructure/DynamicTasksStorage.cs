@@ -54,11 +54,13 @@ namespace VX.Desktop.Infrastructure
         {
             GetTasksDelegate asyncDelegate = VocabServiceFacade.Instance.GetTasks;
             IsReplenishInProgress = true;
-            asyncDelegate.BeginInvoke(CredentialsProvider.Instance.User, CredentialsProvider.Instance.Password,
-                CallbackMethod, asyncDelegate);
+            asyncDelegate.BeginInvoke(
+                CredentialsProvider.Instance.CurrentToken,
+                CallbackMethod, 
+                asyncDelegate);
         }
 
-        private delegate IList<ITask> GetTasksDelegate(string username, string password);
+        private delegate IList<ITask> GetTasksDelegate(Guid token);
 
         void CallbackMethod(IAsyncResult asyncResult)
         {

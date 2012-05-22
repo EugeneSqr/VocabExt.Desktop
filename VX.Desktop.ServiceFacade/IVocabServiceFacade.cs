@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VX.Domain.DataContracts.Interfaces;
 
 namespace VX.Desktop.ServiceFacade
@@ -7,6 +8,6 @@ namespace VX.Desktop.ServiceFacade
     {
         ITask GetTask();
 
-        IList<ITask> GetTasks(string username, string password);
+        IList<ITask> GetTasks(Guid token);
     }
 }

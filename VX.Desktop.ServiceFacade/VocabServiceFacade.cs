@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VX.Desktop.ServiceFacade.VocabExtService;
 using VX.Domain.DataContracts.Interfaces;
@@ -26,12 +27,10 @@ namespace VX.Desktop.ServiceFacade
             return (ITask)ServiceClient.GetTask();
         }
 
-        public IList<ITask> GetTasks(string username, string password)
+        public IList<ITask> GetTasks(Guid token)
         {
-            return ServiceClient.GetTasksSpecifiedVocabBanks(
-                MembershipServiceFacade.Instance.GetVocabBanks(username, password))
-                    .Cast<ITask>()
-                    .ToList();
+            // TODO: retrieve vocabs here
+            return ServiceClient.GetTasksAllVocabBanks().Cast<ITask>().ToList();
         }
     }
 }
