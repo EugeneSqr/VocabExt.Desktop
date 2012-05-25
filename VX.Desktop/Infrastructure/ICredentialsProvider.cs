@@ -6,8 +6,10 @@
 
         string PasswordKey { get; }
 
-        string User { get; }
+        string User { get; set; }
 
-        string Password { get; }
+        string Password { get; set; }
+
+        void EmptyUser();
     }
 }

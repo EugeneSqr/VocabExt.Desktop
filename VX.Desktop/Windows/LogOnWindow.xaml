@@ -1,0 +1,49 @@
+﻿<Window x:Class="VX.Desktop.Windows.LogOnWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PopupHostControl="clr-namespace:VX.Desktop.Controls.PopupHostControl"
+        Title=""        
+        ShowInTaskbar="False"
+        WindowStyle="None" 
+        AllowsTransparency="True" 
+        ResizeMode="NoResize"
+        Background="Transparent"
+        Height="250" 
+        Width="300"
+        WindowStartupLocation="CenterScreen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
+    <Border CornerRadius="5">
+        <Grid x:Name="uiGridMain" Margin="10">
+            <Border Width="Auto" Height="Auto" Style="{StaticResource MainGridBorder}">
+            </Border>
+            <Grid Margin="5,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="42" />
+                </Grid.ColumnDefinitions>                
+                <PopupHostControl:SlickToggleButton CornerRadius="0,0,4,0" x:Name="CloseButton" Style="{StaticResource SlickButton}" 
+                                           HighlightBackground="Crimson" Content="X" Command="{Binding Path=SkipCommand}" Grid.Row="1" 
+                                           FontWeight="Bold" Foreground="#FFFFFFFF" Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="44"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <PopupHostControl:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
+                <Label Margin="5,4,79,15" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Log on"/>
+                <StackPanel x:Name="MainContent" Grid.Row="2" Margin="10,10,10,10">
+                    <TextBox Text="{Binding Path=UserInput, UpdateSourceTrigger=PropertyChanged}" 
+                             Height="23" Width="120" KeyDown="LogonInput"/>
+                    <TextBox Text="{Binding Path=PasswordInput, UpdateSourceTrigger=PropertyChanged}" 
+                             Height="23" Width="120" KeyDown="LogonInput" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

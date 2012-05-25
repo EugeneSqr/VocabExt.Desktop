@@ -121,7 +121,12 @@
     <Compile Include="Controls\LoadingControl\LoadingAnimation.xaml.cs">
       <DependentUpon>LoadingAnimation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainNotifyWindow.xaml.cs">
+    <Compile Include="Infrastructure\RelayCommand.cs" />
+    <Compile Include="Windows\LogOnWindow.xaml.cs">
+      <DependentUpon>LogOnWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LogOnWindowViewModel.cs" />
+    <Compile Include="Windows\MainNotifyWindow.xaml.cs">
       <DependentUpon>MainNotifyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PopupHostControl\SlickButtonControl.cs" />
@@ -156,7 +161,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainNotifyWindow.xaml">
+    <Page Include="Windows\LogOnWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainNotifyWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

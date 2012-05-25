@@ -4,6 +4,9 @@ namespace VX.Desktop.Infrastructure
 {
     public sealed class CredentialsProvider : ICredentialsProvider
     {
+        private const string EmptyUserString = "";
+        private const string EmptyPasswordString = "";
+        
         private CredentialsProvider()
         {
         }
@@ -28,11 +31,19 @@ namespace VX.Desktop.Infrastructure
         public string User
         {
             get { return (string)Application.Current.Properties[UserKey]; }
+            set { Application.Current.Properties[UserKey] = value; }
         }
 
         public string Password
         {
             get { return (string)Application.Current.Properties[PasswordKey]; }
+            set { Application.Current.Properties[PasswordKey] = value; }
+        }
+
+        public void EmptyUser()
+        {
+            User = EmptyUserString;
+            Password = EmptyPasswordString;
         }
     }
 }

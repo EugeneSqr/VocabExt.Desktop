@@ -11,7 +11,7 @@ using VX.Desktop.Controls.LoadingControl;
 using VX.Desktop.Controls.TaskPanelControl;
 using VX.Desktop.Infrastructure;
 
-namespace VX.Desktop
+namespace VX.Desktop.Windows
 {
     public partial class MainNotifyWindow
     {

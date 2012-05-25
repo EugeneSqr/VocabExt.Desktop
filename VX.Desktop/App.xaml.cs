@@ -1,4 +1,4 @@
-﻿using VX.Desktop.Infrastructure;
+﻿using VX.Desktop.Windows;
 
 namespace VX.Desktop
 {
@@ -7,8 +7,15 @@ namespace VX.Desktop
         public App()
         {
             InitializeComponent();
-            Current.Properties[CredentialsProvider.Instance.UserKey] = "Femel";
-            Current.Properties[CredentialsProvider.Instance.PasswordKey] = "femel1";
+
+            var logOnViewModel = new LogOnWindowViewModel();
+            var logOnWindow = new LogOnWindow
+                                  {
+                                      DataContext = logOnViewModel
+                                  };
+
+            logOnViewModel.RequestClose += (sender, args) => logOnWindow.Close();
+            logOnWindow.Show();
         }
     }
 }
