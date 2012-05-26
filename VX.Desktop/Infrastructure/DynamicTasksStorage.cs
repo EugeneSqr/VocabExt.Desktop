@@ -60,7 +60,7 @@ namespace VX.Desktop.Infrastructure
 
         private delegate IList<ITask> GetTasksDelegate(string username, string password);
 
-        void CallbackMethod(IAsyncResult asyncResult)
+        private void CallbackMethod(IAsyncResult asyncResult)
         {
             var asyncDelegate = (GetTasksDelegate)asyncResult.AsyncState;
             items.AddRange(asyncDelegate.EndInvoke(asyncResult));
