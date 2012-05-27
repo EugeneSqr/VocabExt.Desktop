@@ -28,10 +28,13 @@ namespace VX.Desktop.ServiceFacade
 
         public IList<ITask> GetTasks(string username, string password)
         {
-            return ServiceClient.GetTasksSpecifiedVocabBanks(
-                MembershipServiceFacade.Instance.GetVocabBanks(username, password))
-                    .Cast<ITask>()
-                    .ToList();
+            var banks = MembershipServiceFacade.Instance.GetVocabBanks(username, password);
+            var result = banks == null || banks.Length == 0
+                             ? ServiceClient.GetTasksAllVocabBanks()
+                             : ServiceClient.GetTasksSpecifiedVocabBanks(banks);
+            return result
+                .Cast<ITask>()
+                .ToList();
         }
     }
 }
