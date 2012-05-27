@@ -54,11 +54,11 @@
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="44"/>
+                    <RowDefinition Height="33"/>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
             	<PopupHostControl:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
-                <Label Margin="5,4,79,15" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Vocab Extender"/>
+                <Label Margin="5,4,79,0" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Vocab Extender"/>
                 <StackPanel x:Name="MainContent" Grid.Row="2" Margin="10,10,10,10" />
             </Grid>
         </Grid>

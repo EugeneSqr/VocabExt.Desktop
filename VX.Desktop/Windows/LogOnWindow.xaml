@@ -2,14 +2,15 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:PopupHostControl="clr-namespace:VX.Desktop.Controls.PopupHostControl"
-        Title=""        
-        ShowInTaskbar="False"
+        Title=""
+        Icon="/Icons/tray.ico"
+        ShowInTaskbar="True"
         WindowStyle="None" 
         AllowsTransparency="True" 
         ResizeMode="NoResize"
         Background="Transparent"
-        Height="250" 
-        Width="300"
+        Height="170" 
+        Width="270"
         WindowStartupLocation="CenterScreen"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -18,10 +19,30 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
         <Infrastructure:InverseBooleanToVisibilityConverter x:Key="inverseBooleanToVisibilityConverter" />
+        <Style x:Key="inputField" >
+            <Setter Property="TextBox.OverridesDefaultStyle" Value="True"/>
+            <Setter Property="TextBox.FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="TextBox.VerticalAlignment" Value="Center"/>
+            <Setter Property="TextBox.FontStyle" Value="Italic"/>
+            <Setter Property="TextBox.Template">
+                <Setter.Value>
+                    <ControlTemplate >
+                        <Border Name="Border" CornerRadius="5" BorderBrush="Black" BorderThickness="1" >
+                            <ScrollViewer Margin="2" x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
-    <Border CornerRadius="5">
+    <Border>
         <Grid x:Name="uiGridMain" Margin="10">
-            <Border Width="Auto" Height="Auto" Style="{StaticResource MainGridBorder}">
+            <Border Style="{StaticResource MainGridBorder}">
             </Border>
             <Grid Margin="5,0,12,0">
                 <Grid.RowDefinitions>
@@ -37,18 +58,37 @@
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="44"/>
+                    <RowDefinition Height="33"/>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
+                <Label Margin="5,4,79,0" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Log on"/>
                 <PopupHostControl:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
-                <Label Margin="5,4,79,15" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Log on"/>
                 <StackPanel x:Name="MainContent" Grid.Row="2" Margin="10,10,10,10">
-                    <TextBox Text="{Binding Path=UserInput, UpdateSourceTrigger=PropertyChanged}" 
-                        Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource inverseBooleanToVisibilityConverter}}" 
-                        Height="23" Width="120" KeyDown="LogonInput"/>
-                    <TextBox Text="{Binding Path=PasswordInput, UpdateSourceTrigger=PropertyChanged}"
-                        Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource inverseBooleanToVisibilityConverter}}" 
-                        Height="23" Width="120" KeyDown="LogonInput" />
+                    <Grid Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource inverseBooleanToVisibilityConverter}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="27" />
+                            <RowDefinition Height="27" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Login" HorizontalAlignment="Left" Padding="0,5,5,5" />
+                        <TextBox Text="{Binding Path=UserInput, UpdateSourceTrigger=PropertyChanged}"
+                            KeyDown="LogonInput" Grid.Row="0" Grid.Column="1"
+                            Style="{StaticResource inputField}" />
+                        
+                        <Label Content="Password" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Padding="0,5,5,5" />
+                        <PasswordBox PasswordChanged="PasswordChanged"
+                            KeyDown="LogonInput" Grid.Row="1" Grid.Column="1" 
+                            Style="{StaticResource inputField}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,15,0,0">
+                            <Hyperlink NavigateUri="{Binding Path=RegisterUrl}" Click="RegisterHandler">
+                                <TextBlock Text="{Binding Path=RegisterText}"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </Grid>                    
                     <LoadingControl:LoadingAnimation 
                         Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource booleanToVisibilityConverter}}" />
                 </StackPanel>

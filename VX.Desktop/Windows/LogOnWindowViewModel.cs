@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Configuration;
+using System.Diagnostics;
 using System.Windows.Input;
 using System.Windows.Threading;
 using VX.Desktop.Infrastructure;
@@ -11,6 +13,7 @@ namespace VX.Desktop.Windows
     {
         private RelayCommand skipCommand;
         private RelayCommand logonInputCommand;
+        private RelayCommand registerCommand;
 
         private bool isLogonInProgress;
 
@@ -31,6 +34,16 @@ namespace VX.Desktop.Windows
             get { return logonInputCommand ?? (logonInputCommand = new RelayCommand(param => LogonNameInput((KeyEventArgs)param))); }
         }
 
+        public ICommand RegisterCommand
+        {
+            get { return registerCommand ?? (registerCommand = new RelayCommand(param => FollowRegisterUrl())); }
+        }
+
+        private void FollowRegisterUrl()
+        {
+            Process.Start(new ProcessStartInfo(RegisterUrl));
+        }
+
         public string UserInput { get; set; }
 
         public string PasswordInput { get; set; }
@@ -45,6 +58,24 @@ namespace VX.Desktop.Windows
             { 
                 isLogonInProgress = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("IsLogonInProgress"));
+            }
+        }
+
+        public string RegisterUrl 
+        { 
+            get
+            {
+                // TODO: dependency injection and settings caching
+                return ConfigurationManager.AppSettings["RegisterUrl"];
+            }
+        }
+
+        public string RegisterText
+        {
+            get
+            {
+                //TODO: localize
+                return "Register";
             }
         }
 
