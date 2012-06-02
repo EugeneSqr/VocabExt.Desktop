@@ -97,6 +97,8 @@
                                 <TextBlock Text="{Binding Path=RegisterText}"/>
                             </Hyperlink>
                         </TextBlock>
+                        <Button HorizontalAlignment="Right" Width="80" Content="{Binding Path=LogonText}"
+                                Grid.Row="2" Grid.Column="1" Command="{Binding Path=LogonCommand}" />
                     </Grid>                    
                     <LoadingControl:LoadingAnimation 
                         Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource booleanToVisibilityConverter}}"

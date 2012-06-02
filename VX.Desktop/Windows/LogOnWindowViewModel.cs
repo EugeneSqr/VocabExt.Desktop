@@ -13,6 +13,7 @@ namespace VX.Desktop.Windows
     {
         private RelayCommand skipCommand;
         private RelayCommand logonInputCommand;
+        private RelayCommand logonCommand;
         private RelayCommand registerCommand;
 
         private bool isLogonInProgress;
@@ -32,6 +33,11 @@ namespace VX.Desktop.Windows
         public ICommand LogonInputCommand
         {
             get { return logonInputCommand ?? (logonInputCommand = new RelayCommand(param => LogonNameInput((KeyEventArgs)param))); }
+        }
+
+        public ICommand LogonCommand
+        {
+            get { return logonCommand ?? (logonCommand = new RelayCommand(param => Logon())); }
         }
 
         public ICommand RegisterCommand
@@ -76,6 +82,15 @@ namespace VX.Desktop.Windows
             {
                 //TODO: localize
                 return "Register";
+            }
+        }
+
+        public string LogonText
+        {
+            get
+            {
+                //TODO: localize
+                return "Logon";
             }
         }
 

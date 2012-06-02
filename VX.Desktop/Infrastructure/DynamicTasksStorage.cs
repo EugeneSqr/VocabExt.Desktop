@@ -8,7 +8,7 @@ namespace VX.Desktop.Infrastructure
 {
     public sealed class DynamicTasksStorage : IDynamicTasksStorage
     {
-        private const int LowTasksCount = 5;
+        private const int LowTasksCount = 10;
         private const int EmptyStorageTasksCount = 0;
 
         public event EventHandler RunningLowOfItems;
