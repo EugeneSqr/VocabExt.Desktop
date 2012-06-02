@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Controls\TaskPanelControl\Answer.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Controls\TaskPanelControl\CorrectAnswer.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Controls\TaskPanelControl\WrongAnswer.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Controls\LogonButton.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

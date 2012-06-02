@@ -70,14 +70,14 @@
                     <RowDefinition Height="33"/>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Label Margin="5,4,79,0" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="Log on"/>
+                <Label Margin="5,4,79,0" x:Name="TitleLabel" Foreground="White" Opacity="0.9" Content="{Binding Path=LogonText}"/>
                 <PopupHostControl:HorizontalSeparator d:LayoutOverrides="HorizontalAlignment" Grid.Row="1"/>
                 <StackPanel x:Name="MainContent" Grid.Row="2" Margin="10,10,10,10">
                     <Grid Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource inverseBooleanToVisibilityConverter}}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50" />
                             <RowDefinition Height="50" />
-                            <RowDefinition />
+                            <RowDefinition Height="42"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="80" />
@@ -92,13 +92,13 @@
                         <PasswordBox PasswordChanged="PasswordChanged"
                             KeyDown="LogonInput" Grid.Row="1" Grid.Column="1" 
                             Style="{StaticResource inputField}"/>
-                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,30,0,0">
+                        <Button HorizontalAlignment="Right" Width="80" Margin="0,5,0,0" Content="{Binding Path=LogonText}"
+                                Grid.Row="2" Grid.Column="1" Command="{Binding Path=LogonCommand}" Template="{StaticResource ButtonTemplate}" />
+                        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
                             <Hyperlink NavigateUri="{Binding Path=RegisterUrl}" Click="RegisterHandler">
                                 <TextBlock Text="{Binding Path=RegisterText}"/>
                             </Hyperlink>
                         </TextBlock>
-                        <Button HorizontalAlignment="Right" Width="80" Content="{Binding Path=LogonText}"
-                                Grid.Row="2" Grid.Column="1" Command="{Binding Path=LogonCommand}" />
                     </Grid>                    
                     <LoadingControl:LoadingAnimation 
                         Visibility="{Binding Path=IsLogonInProgress, Converter={StaticResource booleanToVisibilityConverter}}"

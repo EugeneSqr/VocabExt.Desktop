@@ -131,6 +131,10 @@
     <Compile Include="Controls\TaskPanelControl\TaskPanel.xaml.cs">
       <DependentUpon>TaskPanel.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\LogonButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\TaskPanelControl\Answer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

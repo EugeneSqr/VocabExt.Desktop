@@ -90,7 +90,7 @@ namespace VX.Desktop.Windows
             get
             {
                 //TODO: localize
-                return "Logon";
+                return "Log on";
             }
         }
 
