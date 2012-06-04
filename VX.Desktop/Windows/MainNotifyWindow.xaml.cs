@@ -195,8 +195,8 @@ namespace VX.Desktop.Windows
         {
             AutomaticPopupDispatcher.Instance.Hide += (sender, args) => extendedNotifyIcon_OnHideWindow();
             AutomaticPopupDispatcher.Instance.Show += (sender, args) => extendedNotifyIcon_OnShowWindow();
-            // todo : to config
-            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromMinutes(10);
+            AutomaticPopupDispatcher.Instance.ShowTimer.Interval = TimeSpan.FromMinutes(
+                ApplicationSettings.Instance.PoputIntervalMinutes);
             AutomaticPopupDispatcher.Instance.HideTimer.Interval = TimeSpan.FromSeconds(5);
             AutomaticPopupDispatcher.Instance.StartCountForShow();
         }

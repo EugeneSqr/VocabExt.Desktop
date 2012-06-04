@@ -83,9 +83,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
     <Reference Include="VX.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\.Libraries\VX.Domain.dll</HintPath>
@@ -103,12 +100,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AnswerStyleSelector.cs" />
+    <Compile Include="Infrastructure\ApplicationSettings.cs" />
     <Compile Include="Infrastructure\AutomaticPopupDispatcher.cs" />
     <Compile Include="Infrastructure\CredentialsProvider.cs" />
     <Compile Include="Infrastructure\DynamicTasksStorage.cs" />
     <Compile Include="Controls\PopupHostControl\HorizontalSeparatorRD.xaml.cs">
       <DependentUpon>HorizontalSeparatorRD.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\IApplicationSettings.cs" />
     <Compile Include="Infrastructure\IAutomaticPopupDispatcher.cs" />
     <Compile Include="Infrastructure\ICredentialsProvider.cs" />
     <Compile Include="Infrastructure\IDynamicTasksStorage.cs" />
@@ -214,9 +213,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\tray.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\exit.ico" />
     <Resource Include="Icons\settings.ico" />
   </ItemGroup>
@@ -225,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\tray.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="badd7cdd-e448-4c61-bf8f-535cc28a9290" Name="VocabExtender" Language="1033" Version="1.1.0" Manufacturer="Femel" UpgradeCode="f212d77d-92e3-4ca5-9051-e1ee2afa792a">
+		<Package Id='*' InstallerVersion="200" Compressed="yes" />
+    <Property Id="_BrowseProperty" Value="MyApp" />
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="VocabExtender">
+					<Component Id="MainExecutable" Guid="3ca6c8ee-b508-47e2-afa9-a1da0bd5d007">
+            <File Id="VX.Desktop.exe" Name="VX.Desktop.exe" Source="..\VX.Desktop\bin\Release\VX.Desktop.exe" >
+              <Shortcut Id="desktopVocabExtender" Directory="DesktopFolder" Name="VocabExtender" WorkingDirectory='INSTALLLOCATION' Icon="VX.Desktop.exe" IconIndex="0" Advertise="yes" />
+            </File>
+            <File Id="VX.Desktop.exe.config" Name="VX.Desktop.exe.config" Source="..\VX.Desktop\bin\Release\VX.Desktop.exe.config" />
+					</Component>
+          <Component Id="FacadeLibrary" Guid="D25CC400-D53B-4419-B513-8E29C00B991D">
+            <File Id="VX.Desktop.ServiceFacade.dll" Name="VX.Desktop.ServiceFacade.dll" Source="..\VX.Desktop\bin\Release\VX.Desktop.ServiceFacade.dll" />
+          </Component>
+          <Component Id="DomainLibrary" Guid="578D4DE5-861B-4BBE-ACBF-D5ADF7963051">
+            <File Id="VX.Domain.dll" Name="VX.Domain.dll" Source="..\VX.Desktop\bin\Release\VX.Domain.dll" />
+          </Component>
+          <Component Id="ExtendedWindowsControls" Guid="12D23C7B-E286-4E2B-9C4D-6EE91050EE70">
+            <File Id="ExtendedWindowsControls.dll" Name="ExtendedWindowsControls.dll" Source="..\VX.Desktop\bin\Release\ExtendedWindowsControls.dll" />
+          </Component>
+				</Directory>
+			</Directory>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>    
+
+    <Feature Id="ProductFeature" Title="VX.Desktop.Setup" Description='The complete package.' Level="1" ConfigurableDirectory="INSTALLLOCATION" Display="expand">			
+			<ComponentRef Id="MainExecutable" />
+			<ComponentRef Id="FacadeLibrary" />
+			<ComponentRef Id="DomainLibrary" />
+			<ComponentRef Id="ExtendedWindowsControls" />
+			<!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. -->
+			<ComponentGroupRef Id="Product.Generated" />
+		</Feature>
+
+    <UIRef Id="WixUI_Mondo" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <Icon Id="VX.Desktop.exe" SourceFile="..\VX.Desktop\bin\Release\VX.Desktop.exe" />
+	</Product>
+</Wix>

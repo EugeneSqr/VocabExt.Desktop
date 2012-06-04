@@ -2,6 +2,8 @@ VX.Desktop/bin/
 VX.Desktop/obj/
 VX.Desktop.ServiceFacade/bin/
 VX.Desktop.ServiceFacade/obj/
+VX.Desktop.Setup/bin/
+VX.Desktop.Setup/obj/
 VX.Desktop/VX.Desktop.suo
 VX.Desktop/VX.Desktop.sln.DotSettings.user
 VX.Desktop/_Resharper.VX.Desktop/
