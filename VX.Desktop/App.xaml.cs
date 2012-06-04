@@ -22,7 +22,10 @@ namespace VX.Desktop
 
         private void CloseWindowHandler(object sender, EventArgs e)
         {
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Window>(window => window.Close()), logOnWindow);
+            Dispatcher.Invoke(
+                DispatcherPriority.Normal, 
+                new Action<Window>(window => window.Hide()), 
+                logOnWindow);
         }
     }
 }
