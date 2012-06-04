@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VX.Desktop", "VX.Desktop.csproj", "{063F1996-DB2E-4803-A942-DEFB348AB75E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VX.Desktop", "VX.Desktop\VX.Desktop.csproj", "{063F1996-DB2E-4803-A942-DEFB348AB75E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VX.Desktop.ServiceFacade", "..\VX.Desktop.ServiceFacade\VX.Desktop.ServiceFacade.csproj", "{C501C275-644D-4B60-A639-FEC9B249CC97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VX.Desktop.ServiceFacade", "VX.Desktop.ServiceFacade\VX.Desktop.ServiceFacade.csproj", "{C501C275-644D-4B60-A639-FEC9B249CC97}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "VX.Desktop.Setup", "..\VX.Desktop.Setup\VX.Desktop.Setup.wixproj", "{40E9D58D-BC61-47AB-9892-703F931EA7D2}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "VX.Desktop.Setup", "VX.Desktop.Setup\VX.Desktop.Setup.wixproj", "{40E9D58D-BC61-47AB-9892-703F931EA7D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
