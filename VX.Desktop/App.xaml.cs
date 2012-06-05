@@ -8,24 +8,33 @@ namespace VX.Desktop
     public partial class App
     {
         private readonly LogOnWindow logOnWindow;
+        private readonly MainNotifyWindow mainNotifyWindow;
         
         public App()
         {
             InitializeComponent();
 
             logOnWindow = new LogOnWindow();
+            mainNotifyWindow = new MainNotifyWindow();
+            mainNotifyWindow.Closing += CloseAllWindowsHandler;
+
             var logOnViewModel = new LogOnWindowViewModel();
             logOnWindow.DataContext = logOnViewModel;
-            logOnViewModel.RequestClose += CloseWindowHandler;
+            logOnViewModel.RequestClose += CloseLogonWindowHandler;
             logOnWindow.Show();
         }
 
-        private void CloseWindowHandler(object sender, EventArgs e)
+        private void CloseLogonWindowHandler(object sender, EventArgs e)
         {
             Dispatcher.Invoke(
                 DispatcherPriority.Normal, 
                 new Action<Window>(window => window.Hide()), 
                 logOnWindow);
+        }
+
+        private void CloseAllWindowsHandler(object sender, EventArgs e)
+        {
+            logOnWindow.Close();
         }
     }
 }
