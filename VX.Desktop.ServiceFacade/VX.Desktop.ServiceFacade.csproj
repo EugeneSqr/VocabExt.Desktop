@@ -38,6 +38,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
     <Reference Include="VX.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\.Libraries\VX.Domain.dll</HintPath>
@@ -80,7 +81,13 @@
     <None Include="Service References\AccountMembershipService\VX.Desktop.ServiceFacade.AccountMembershipService.MembershipCreateStatus.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\VocabExtService\VocabExtService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\VocabExtService\VocabExtService1.wsdl" />
+    <None Include="Service References\VocabExtService\VocabExtService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\VocabExtService\VocabExtService4.xsd">
       <SubType>Designer</SubType>
     </None>

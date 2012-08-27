@@ -2,10 +2,12 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VocabExtService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd3" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd4" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/VX.Domain.DataContracts" />
       <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VX.Domain" />
+      <xsd:import schemaLocation="http://vx-service.com/VocabExtService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/Message" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IVocabExtService_GetTask_InputMessage">
@@ -32,6 +34,66 @@
   <wsdl:message name="IVocabExtService_GetVocabBanksList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetVocabBanksListResponse" />
   </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetTranslations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTranslations" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetTranslations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTranslationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWords" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_CreateNewVocabularyBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewVocabularyBank" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_CreateNewVocabularyBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewVocabularyBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetLanguages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_GetLanguages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_DeleteVocabularyBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVocabularyBank" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_DeleteVocabularyBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVocabularyBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_SaveTranslation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTranslation" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_SaveTranslation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTranslationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_DetachTranslation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetachTranslation" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_DetachTranslation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetachTranslationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_UpdateBankHeaders_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankHeaders" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_UpdateBankHeaders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBankHeadersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_SaveWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWord" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_SaveWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_ValidateWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateWord" />
+  </wsdl:message>
+  <wsdl:message name="IVocabExtService_ValidateWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateWordResponse" />
+  </wsdl:message>
   <wsdl:portType name="IVocabExtService">
     <wsdl:operation name="GetTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTask" message="tns:IVocabExtService_GetTask_InputMessage" />
@@ -48,6 +110,46 @@
     <wsdl:operation name="GetVocabBanksList">
       <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetVocabBanksList" message="tns:IVocabExtService_GetVocabBanksList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetVocabBanksListResponse" message="tns:IVocabExtService_GetVocabBanksList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetTranslations" message="tns:IVocabExtService_GetTranslations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetTranslationsResponse" message="tns:IVocabExtService_GetTranslations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetWords" message="tns:IVocabExtService_GetWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetWordsResponse" message="tns:IVocabExtService_GetWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewVocabularyBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/CreateNewVocabularyBank" message="tns:IVocabExtService_CreateNewVocabularyBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/CreateNewVocabularyBankResponse" message="tns:IVocabExtService_CreateNewVocabularyBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/GetLanguages" message="tns:IVocabExtService_GetLanguages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/GetLanguagesResponse" message="tns:IVocabExtService_GetLanguages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVocabularyBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/DeleteVocabularyBank" message="tns:IVocabExtService_DeleteVocabularyBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/DeleteVocabularyBankResponse" message="tns:IVocabExtService_DeleteVocabularyBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTranslation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/SaveTranslation" message="tns:IVocabExtService_SaveTranslation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/SaveTranslationResponse" message="tns:IVocabExtService_SaveTranslation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetachTranslation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/DetachTranslation" message="tns:IVocabExtService_DetachTranslation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/DetachTranslationResponse" message="tns:IVocabExtService_DetachTranslation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankHeaders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/UpdateBankHeaders" message="tns:IVocabExtService_UpdateBankHeaders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/UpdateBankHeadersResponse" message="tns:IVocabExtService_UpdateBankHeaders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/SaveWord" message="tns:IVocabExtService_SaveWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/SaveWordResponse" message="tns:IVocabExtService_SaveWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateWord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVocabExtService/ValidateWord" message="tns:IVocabExtService_ValidateWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVocabExtService/ValidateWordResponse" message="tns:IVocabExtService_ValidateWord_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IVocabExtService" type="tns:IVocabExtService">
@@ -81,6 +183,96 @@
     </wsdl:operation>
     <wsdl:operation name="GetVocabBanksList">
       <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetVocabBanksList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslations">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetTranslations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWords">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewVocabularyBank">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/CreateNewVocabularyBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVocabularyBank">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/DeleteVocabularyBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTranslation">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/SaveTranslation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetachTranslation">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/DetachTranslation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBankHeaders">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/UpdateBankHeaders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWord">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/SaveWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateWord">
+      <soap:operation soapAction="http://tempuri.org/IVocabExtService/ValidateWord" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

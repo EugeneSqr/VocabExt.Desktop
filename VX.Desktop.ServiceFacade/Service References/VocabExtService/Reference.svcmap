@@ -21,6 +21,8 @@
     <MetadataSource Address="http://vx-service.com/VocabExtService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="VocabExtService.xsd" MetadataType="Schema" ID="71c5b246-3cf4-4c8f-b8dd-91042f021510" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd4" />
+    <MetadataFile FileName="VocabExtService1.xsd" MetadataType="Schema" ID="6a426946-4a6d-450f-ac12-bebc2f29b2b8" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd5" />
     <MetadataFile FileName="VocabExtService1.wsdl" MetadataType="Wsdl" ID="bc7c9574-99eb-48a3-a63e-bd4fce62801b" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?wsdl" />
     <MetadataFile FileName="VocabExtService4.xsd" MetadataType="Schema" ID="13da15ad-e574-437f-ba64-0e1f63bdaffb" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd3" />
     <MetadataFile FileName="VocabExtService41.xsd" MetadataType="Schema" ID="69a5ae7c-d976-41b6-9217-e734cea1ea73" SourceId="1" SourceUrl="http://vx-service.com/VocabExtService.svc?xsd=xsd0" />
