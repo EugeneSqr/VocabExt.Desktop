@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VX.Domain.Entities.Impl" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VX.Domain.Entities.Impl" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:17025/VocabExtService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="VocabBankContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Tags" nillable="true" type="q1:ArrayOfanyType" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Translations" nillable="true" type="q2:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VocabBankContract" nillable="true" type="tns:VocabBankContract" />
+  <xs:complexType name="TranslationContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TranslationContract" nillable="true" type="tns:TranslationContract" />
+  <xs:complexType name="WordContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Spelling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transcription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WordContract" nillable="true" type="tns:WordContract" />
+  <xs:complexType name="LanguageContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LanguageContract" nillable="true" type="tns:LanguageContract" />
+  <xs:complexType name="TagContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagContract" nillable="true" type="tns:TagContract" />
+  <xs:complexType name="TaskContract">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Answers" nillable="true" type="q3:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="CorrectAnswer" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskContract" nillable="true" type="tns:TaskContract" />
+</xs:schema>
