@@ -1,5 +1,5 @@
 ﻿using System;
-using VX.Domain.DataContracts.Interfaces;
+using VX.Domain.Entities;
 
 namespace VX.Desktop.Infrastructure
 {

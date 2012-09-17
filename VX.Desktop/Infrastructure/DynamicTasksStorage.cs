@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VX.Desktop.ServiceFacade;
-using VX.Domain.DataContracts.Interfaces;
+using VX.Domain.Entities;
 
 namespace VX.Desktop.Infrastructure
 {

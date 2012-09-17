@@ -18,16 +18,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://vx.com/AccountMembershipService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:17026/AccountMembershipService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AccountMembershipService.disco" MetadataType="Disco" ID="fff3dbb7-b9c5-414c-897c-30567c53f659" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?disco" />
-    <MetadataFile FileName="AccountMembershipService4.xsd" MetadataType="Schema" ID="967a1cdd-c1d0-4d9d-8ffe-479693ba6758" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd4" />
-    <MetadataFile FileName="AccountMembershipService.xsd" MetadataType="Schema" ID="7d219ce6-1042-4871-84aa-7b6c7cfd674a" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd0" />
-    <MetadataFile FileName="AccountMembershipService1.xsd" MetadataType="Schema" ID="eda4c618-15a1-43bf-bea6-60ddb92a4845" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd1" />
-    <MetadataFile FileName="AccountMembershipService2.xsd" MetadataType="Schema" ID="91bbe47b-40ea-4a38-a470-0c78c9818f07" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd2" />
-    <MetadataFile FileName="AccountMembershipService1.wsdl" MetadataType="Wsdl" ID="c739defe-e28e-4ba0-b1db-05caf0619d54" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?wsdl" />
-    <MetadataFile FileName="AccountMembershipService3.xsd" MetadataType="Schema" ID="b77eecab-dc77-4208-9851-8865f90e8d92" SourceId="1" SourceUrl="http://vx.com/AccountMembershipService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccountMembershipService5.xsd" MetadataType="Schema" ID="8420c276-43f4-4fa1-9be7-2261eb170b67" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccountMembershipService.wsdl" MetadataType="Wsdl" ID="65f71827-b265-4639-a57c-c5ab0233bef7" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?wsdl" />
+    <MetadataFile FileName="AccountMembershipService51.xsd" MetadataType="Schema" ID="afed5d48-52e3-464f-ba91-aee0ddf17491" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccountMembershipService52.xsd" MetadataType="Schema" ID="5bdd5277-ee4c-4162-a8c9-9e716aba3a40" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccountMembershipService1.disco" MetadataType="Disco" ID="fe671ebe-8e7c-488d-bc5a-671368c39379" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?disco" />
+    <MetadataFile FileName="AccountMembershipService53.xsd" MetadataType="Schema" ID="b7bb30c5-2527-484d-8c48-51ffc803b876" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AccountMembershipService54.xsd" MetadataType="Schema" ID="38fa5fb6-8e5a-47be-82f8-a9585a515a3b" SourceId="1" SourceUrl="http://localhost:17026/AccountMembershipService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

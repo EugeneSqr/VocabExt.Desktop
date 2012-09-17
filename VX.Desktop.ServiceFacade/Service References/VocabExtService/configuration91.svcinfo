@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="JF/q/zUTibl+V9iU1K4qTvfGnH0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="nvQ8hhdaB8yjWswSIy3YPzujuiM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IVocabExtService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IVocabExtService" contract="VocabExtService.IVocabExtService" bindingType="basicHttpBinding" address="http://vx-service.com/VocabExtService.svc/soapService" bindingConfiguration="BasicHttpBinding_IVocabExtService">
+    <endpoint name="BasicHttpBinding_IVocabExtService" contract="VocabExtService.IVocabExtService" bindingType="basicHttpBinding" address="http://localhost:17025/VocabExtService.svc/soapService" bindingConfiguration="BasicHttpBinding_IVocabExtService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://vx-service.com/VocabExtService.svc/soapService</serializedValue>
+          <serializedValue>http://localhost:17025/VocabExtService.svc/soapService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -62,42 +62,45 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AccountMembershipService\AccountMembershipService.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService.wsdl" />
+    <None Include="Service References\AccountMembershipService\AccountMembershipService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountMembershipService\AccountMembershipService1.wsdl" />
-    <None Include="Service References\AccountMembershipService\AccountMembershipService1.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountMembershipService\AccountMembershipService2.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountMembershipService\AccountMembershipService3.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountMembershipService\AccountMembershipService4.xsd">
+    <None Include="Service References\AccountMembershipService\AccountMembershipService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AccountMembershipService\VX.Desktop.ServiceFacade.AccountMembershipService.MembershipCreateStatus.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService.wsdl" />
+    <None Include="Service References\VocabExtService\VocabExtService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService1.wsdl" />
-    <None Include="Service References\VocabExtService\VocabExtService1.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService21.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService4.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService22.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService41.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService23.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService42.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService24.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VocabExtService\VocabExtService43.xsd">
+    <None Include="Service References\VocabExtService\VocabExtService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VocabExtService\VocabExtService26.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -121,12 +124,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\VocabExtService\VocabExtService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AccountMembershipService\AccountMembershipService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\AccountMembershipService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +134,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AccountMembershipService\AccountMembershipService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VocabExtService\VocabExtService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

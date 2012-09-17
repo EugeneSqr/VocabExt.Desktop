@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using VX.Desktop.Infrastructure;
-using VX.Domain.DataContracts.Interfaces;
+using VX.Domain.Entities;
 
 namespace VX.Desktop.Controls.TaskPanelControl
 {

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using VX.Domain.DataContracts.Interfaces;
+using VX.Domain.Entities;
 
 namespace VX.Desktop.ServiceFacade
 {
