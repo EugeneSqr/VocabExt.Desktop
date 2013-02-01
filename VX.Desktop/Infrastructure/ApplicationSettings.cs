@@ -1,5 +1,4 @@
 ﻿using System.Configuration;
-using VX.Desktop.ServiceFacade;
 
 namespace VX.Desktop.Infrastructure
 {
