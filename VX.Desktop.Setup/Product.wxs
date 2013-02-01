@@ -23,6 +23,9 @@
           <Component Id="ExtendedWindowsControls" Guid="12D23C7B-E286-4E2B-9C4D-6EE91050EE70">
             <File Id="ExtendedWindowsControls.dll" Name="ExtendedWindowsControls.dll" Source="..\VX.Desktop\bin\Release\ExtendedWindowsControls.dll" />
           </Component>
+          <Component Id="log4net" Guid="01C14965-7FD4-424F-8C93-5B2A3CB45DC9">
+            <File Id="log4net.dll" Name="log4net.dll" Source="..\VX.Desktop\bin\Release\log4net.dll" />
+          </Component>
 				</Directory>
 			</Directory>
       <Directory Id="DesktopFolder" Name="Desktop" />
@@ -33,6 +36,7 @@
 			<ComponentRef Id="FacadeLibrary" />
 			<ComponentRef Id="DomainLibrary" />
 			<ComponentRef Id="ExtendedWindowsControls" />
+			<ComponentRef Id="log4net" />
 			<!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. -->
 			<ComponentGroupRef Id="Product.Generated" />
 		</Feature>
