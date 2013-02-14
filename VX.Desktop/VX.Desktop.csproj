@@ -108,6 +108,7 @@
     <Compile Include="Infrastructure\ApplicationSettings.cs" />
     <Compile Include="Infrastructure\AutomaticPopupDispatcher.cs" />
     <Compile Include="Infrastructure\CredentialsProvider.cs" />
+    <Compile Include="Infrastructure\CustomProxy.cs" />
     <Compile Include="Infrastructure\DynamicTasksStorage.cs" />
     <Compile Include="Controls\PopupHostControl\HorizontalSeparatorRD.xaml.cs">
       <DependentUpon>HorizontalSeparatorRD.xaml</DependentUpon>
